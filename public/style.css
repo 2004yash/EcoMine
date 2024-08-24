@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 300vh; /* Minimum height to ensure full viewport height */
+  background-image: url('i.jpg'); /* Ensure the path is correct */
+  background-size: cover; /* Cover the entire viewport */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent repeating the image */
+  font-family: 'Electrolize', sans-serif;
+}
