@@ -1,98 +1,102 @@
 .signup-container {
-    color: #ccc;
-    height: 100vh;
-    padding: 30px;
-    margin-top: 10%;
-  }
-  
-  h1 {
-    font-size: 1.5rem;
-    margin-left: 2%;
-  }
-  
-  .signup-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /* Align items at the start */
-  }
-  
-  .signup-form {
-    width: 50%;
-    padding: 20px;
-    border: none;
-    border-radius: 8px;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 8px;
-    color: #ccc;
-    border: none;
-    border-bottom: 2px solid #ddd;
-    background-color: transparent;
-  }
-  
-  .form-group input:focus {
-    outline: none;
-    border-bottom-color: #007bff;
-  }
-  
-  .btn-signup {
-    margin-top: 20%;
-    padding: 10px 35px;
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-    border-radius: 30px;
-    font-size: 1rem;
-    cursor: pointer;
-    text-align: center;
-    display: inline-block;
-    margin: 10px auto;
-  }
-  
-  .form-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .remember-me {
-    display: flex;
-    align-items: center;
-  }
-  
-  .remember-me input[type="checkbox"] {
-    margin-right: 8px; /* Add space between the checkbox and label */
-  }
-  
-  a:link,
-  a:visited {
-    color: #ccc;
-  }
-  
-  .signup-text {
-    width: 40%;
-    padding: 70px;
-    text-align: end;
-  }
-  
-  .signup-text h2 {
-    font-size: 2.7rem;
-    margin-bottom: 10px;
-  }
-  
-  .signup-text h2 span {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
+  color: #ccc;
+  height: 100vh;
+  padding: 30px;
+  margin-top: 10%;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-left: 2%;
+}
+
+.signup-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items at the start */
+}
+
+.signup-form {
+  width: 50%;
+  padding: 20px;
+  border: none;
+  border-radius: 8px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  color: #ccc;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  background-color: transparent;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-bottom-color: #007bff;
+}
+
+.btn-signup {
+  margin-top: 20%;
+  padding: 10px 35px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  margin: 10px auto;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center; /* Align checkbox and label text vertically */
+  gap: 8px; /* Add space between the checkbox and label */
+  margin: 0; /* Remove any default margins */
+}
+
+input[type="checkbox"] {
+  margin: 0;
+  padding: 0;
+  display: inline-block; /* Ensure checkbox stays inline */
+  vertical-align: middle; /* Align checkbox with text */
+}
+
+a:link,
+a:visited {
+  color: #ccc;
+}
+
+.signup-text {
+  width: 40%;
+  padding: 70px;
+  text-align: end;
+}
+
+.signup-text h2 {
+  font-size: 2.7rem;
+  margin-bottom: 10px;
+}
+
+.signup-text h2 span {
+  display: block;
+  margin-bottom: 5px;
+}
