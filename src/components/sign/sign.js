@@ -90,7 +90,7 @@ const SignUpPage = () => {
                 <input
                   type="checkbox"
                   name="rememberMe"
-                  class="check"
+                  className="check"
                   checked={form.rememberMe}
                   onChange={handleChange}
                 />
