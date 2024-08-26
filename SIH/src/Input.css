@@ -1,0 +1,43 @@
+.box {
+  width: 90%;
+  height: 65%;
+  /* border: 2px solid #FFFF; */
+ 
+   background-color: #00000096;
+ 
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+
+  border-radius: 7px;
+}
+
+.box:hover {
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.boxes {
+  width: 25%;
+  padding: 2%;
+  height: 52%;
+  /* border: 2px solid #444; */
+ 
+  /* border-radius: 5px; */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+
+   
+  
+}
+
+.boxes:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+input{
+    background-color: black;
+    color: #FFFF;
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+    border-color: #FFFF;
+}
