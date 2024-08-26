@@ -1,0 +1,91 @@
+.menu-container {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    height: max-content;
+    /* margin-bottom: 20%; */
+  }
+  
+  h1 {
+    color: white;
+    font-size: 2.4rem !important;
+    text-align: center ;
+    width: 65% !important;
+  }
+  
+  .img-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 100px;
+  }
+  
+  /* Hero section styling */
+  .hero2 {
+    margin-top: 10%; /* Adjusted margin-top for spacing from the top */
+    margin-bottom: 5%;
+    background-color: black;
+    padding: 20px 0; /* Added padding for spacing */
+    text-align: center; /* Center-aligns all content within .hero2 */
+  }
+  
+  .h1 {
+    font-size: 2.8rem;
+    color: white;
+    margin: 0 auto;
+    align-items: start;
+    justify-content: start;
+    margin-left: 3% !important;
+  }
+  
+  .p3, .p4 {
+    font-size: 0.85rem;
+    color: white;
+    margin: 6px auto;
+    max-width: 590px;
+    word-break: break-word;
+    line-height: 1.2;
+    text-align: center;
+  }
+  
+  .img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .img-container.central {
+    transform: translateY(-50px);
+  }
+  
+  .actual-img {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqMPSAn5eQ2MoHTaUExjWN_7rcdHCHcQ9dAeFfb7F4yyrOOYLt4iQD2xvcWZ0AUOC3G40&usqp=CAU');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .text-container {
+    max-width: 500px;
+    text-align: center;
+  }
+  
+  .p1 {
+    font-size: 1.9rem !important;
+    margin: 10px 0;
+  }
+  
+  .p2 {
+    font-size: 0.8rem;
+    margin-left: 30% !important;
+    line-height: 1.5;
+    word-break: break-word;
+    max-width: 45%;
+    align-items: start;
+  }
+  
