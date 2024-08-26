@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './sign.css'; // Correct CSS file path
+import { useNavigate } from 'react-router-dom';
 
 const SignUpPage = () => {
   const [form, setForm] = useState({
@@ -10,6 +11,8 @@ const SignUpPage = () => {
     confirmPassword: '',
     rememberMe: false,
   });
+
+  const navigate = useNavigate(); // Move useNavigate to the top level of the component
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -22,6 +25,9 @@ const SignUpPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add form submission logic here
+
+    // Navigate to the CarbonForm page after submission
+    navigate('/CarbonForm');
   };
 
   return (
