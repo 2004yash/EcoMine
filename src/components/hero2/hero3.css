@@ -1,23 +1,29 @@
-.hero3{
-    margin-top:9%;
-    
-}
-h{
-    margin-left:28%;
-    font-size: 2.8rem;
-    color:white
-}
-p{
+/* Hero Section Styles */
+.hero-section {
+    display: flex;
+    align-items: center;
+    height: 100vh; /* Adjust the height according to your needs */
+    background-color: #f4f4f4; /* Background color for the hero section */
+    padding-left: 5%; /* Left margin for the whole content */
+  }
   
-    font-size: 0.85rem;
-    margin-left: 30%;
-    max-width: 590px;
-    margin: 0 auto;
-    color: white;
-    margin-top:6px;
-    word-break: break-word;
-    line-height: 1.2;
+  .hero-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
+    justify-content: flex-start;
+  }
+  
+  /* Large Text (p1) */
+  .p1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  /* Smaller Text (p2) */
+  .p2 {
+    font-size: 1.5rem;
+    margin: 0;
+    margin-top: 20px; /* Adjust spacing between p1 and p2 */
+  }
+  
