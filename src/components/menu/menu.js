@@ -6,13 +6,14 @@ const Menu = () => {
     <div className="menu-container">
       <h1>SIT CONSECTETUR ADIPISCING ELIT.</h1>
       <div className="img-row">
+        {/* Image and text containers */}
         <div className="img-container">
           <div className="actual-img"></div>
           <div className="text-container">
             <p className="p1">Lorom ipsum dolor</p>
             <p className="p2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit.
             </p>
           </div>
         </div>
@@ -21,8 +22,8 @@ const Menu = () => {
           <div className="text-container">
             <p className="p1">Lorom ipsum dolor</p>
             <p className="p2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit.
             </p>
           </div>
         </div>
@@ -41,13 +42,10 @@ const Menu = () => {
       {/* Hero section */}
       <div className="hero2">
         <h2 className="h1">What's Your Carbon Footprint?</h2>
-        <p className="p3">Discover how your daily activities contribute to carbon emissions and find out </p>
-        <p className="p4">how you can make a difference</p>
+        <p className="p3">Lorem ipsum dolor ipsum dolor sit amet,consectetur adipiscing elit </p>
       </div>
     </div>
   );
 };
 
 export default Menu;
-
-

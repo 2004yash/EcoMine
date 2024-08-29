@@ -13,7 +13,7 @@ function Navbar() {
 
         {/* Centered logo */}
         <div className="logo">
-          <img src={`${process.env.PUBLIC_URL}/log.jpg`} alt="Logo" className="logo-img" />
+          <img src={`${process.env.PUBLIC_URL}/your-logo.png`} alt="Logo" className="logo-img" />
         </div>
 
         {/* Right-side menu items */}
