@@ -1,51 +1,66 @@
+/* General Navbar Styles */
 .navbar {
+    background-color: white;
+    padding: 10px 0;
+    width: 100%;
+    
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: center;
+    color: black;
+    align-items: center;
+  }
+  
+  /* Logo Styles */
+  .logo {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px 5%;
-    background-color: #333; /* Assuming a background color for better visibility */
-}
-
-/* XYZABC brand section */
-.xy {
-    color: white;
-    font-size: 1.5rem;
-}
-
-/* Menu container */
-.menu-container {
+    
+  }
+  
+  .logo-img {
+    height: 50px; /* Adjust this to your preferred logo height */
+  }
+  
+  /* Menu Styles */
+  .menu-left, .menu-right {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 20px; /* Adds space between menu items */
-}
-
-/* Menu items */
-.menu {
-    color: white;
-    font-size: 1rem;
-    margin: 0 10px; /* Adjusted for better spacing */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: center;
+    align-items: center;
+  }
+  
+  .nav-link {
+    color: rgb(5, 0, 0) !important;
+    text-decoration: none;
+    margin: 0 50px;
+   
+    font-size: 18px;
+    align-items: center; 
+    ;
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Adjusting Flex Alignment */
+  .menu-left {
+    margin-right: auto;
+  }
+  
+  .menu-right {
+    margin-left: auto;
+  }
+  
+  /* Responsive behavior */
+  @media (max-width: 768px) {
+    .navbar-container {
+      flex-direction: column;
     }
-
-    .xy {
-        margin-bottom: 10px;
-        font-size: 1.2rem; /* Slightly smaller font size for smaller screens */
+  
+    .menu-left, .menu-right {
+      margin: 10px 0;
     }
-
-    .menu-container {
-        justify-content: center;
-        gap: 15px; /* Less space between menu items */
-    }
-
-    .menu {
-        font-size: 0.9rem; /* Smaller font size for smaller screens */
-    }
-}
-
+  }
+  

@@ -1,110 +1,44 @@
-*{
-  margin: 0;
-  padding: 0;
-  
-  font-family: 'Electrolize', sans-serif;
-
+html{
+  height: 100vh;
+  width: 100vw;
+background-color: black;
 }
-.hero{
-  
+
+.frame{
+ 
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url('../../public/i.jpg');
-  background-size: cover; /* Ensures the image covers the entire background */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-color: black;
  
-  /* box-shadow: -20px -14px 1000px 20px inset; */
-
-  
-}
-.hero2{
-  width: 100vw;
-  height: 100vh;
-  background-color: #000000cb;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-}
-
-
-.main{
-  width: 60vw;
-  /* width: 1103px; */
-  height: 133vh;
-  border: 2px solid #FFFFFF;
-  /* background-color: rgba(17, 16, 16, 0.933); */
- /* background-image: pexels-zandatsu-10117133.png; */
-
-border-radius: 17px;
-
-scale: 0.72;
-}
-.heading{
-  width: 100%;
-  height: 17%;
-  
-  display:flex ;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2vh;
-  font-family: Electrolize;
-  color:#FFFFFF
-  
  
+}
 
-}
-.heading h1{
-
- background: linear-gradient(90deg, #FFFAFA 0%, #999696 100%);
- color: #000000;
- width: 87%;
-    text-align: center;
-    border-radius: 40px
-}
-.Excavation{
-  width: 100%;
-  height: 9%;
-  /* background-color: rgb(12, 12, 12); */
-  margin-bottom: 6.3vw;
-  color:#FFFFFF
-  
-}
-.inputmain{
-  display: flex;
-  width: 100%;
-  height: 86%;
-  /* background-color: rgb(6, 6, 6); */
-  justify-content: space-between;
-}
-.inputmain2{
-  display: flex;
-  width: 100%;
-  height: 86%;
-  /* background-color: rgb(13, 15, 15); */
-  gap: 3.5vw;
-}
-button{
-  background-color: #047E26;
-  color: #FFFFFF;
-  margin-left: 4%;
-  padding: 1%;
-  width: 13vw;
-  
-    /* border-top-left-radius: 20px;  
-    border-bottom-left-radius: 20px;  
-    
-    border-top-right-radius: 20px;  
-    border-bottom-right-radius: 20px;  
-   */
-  border-radius: 40px;
+.frame h1{
+  text-align: center;
+  line-height: 2;
+  /* border: 2px solid black; */
+  /* margin-top: 2vh; */
+  margin-bottom: 9vh;
   position: relative;
-  bottom: 15px;
-  scale: 1.2;
-  border: 2px solid black;
+  top:3vh;
+  background-color: white;
+  color: black;
+}
+.form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.DisplayForm{
+  width: 58.5vw;
+  height: 75vh;
+  /* background-color: antiquewhite; */
+  border: 2px solid white;
+  border-radius: 5px;
+  background-image: url('../../public/pollution.jpg'); /* Use the correct path to your image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  scale: 0.8;
+  
 }
