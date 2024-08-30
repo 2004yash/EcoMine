@@ -1,0 +1,23 @@
+.box {
+    width: 100%;
+    height: 100%;
+    /* background-color: #00000096; */
+    /* box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); */
+    border-radius: 7px;
+    /* transition: all 0.3s ease-in-out; */
+  }
+  
+  
+  
+  input {
+    background-color: white;
+    color: black;
+    width: 90%;
+    height: 42.6%;
+    border-radius: 7px;
+    border: none;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    margin-top: 1vh;
+  }
+  

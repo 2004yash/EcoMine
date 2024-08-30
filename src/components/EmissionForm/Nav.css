@@ -1,0 +1,38 @@
+ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    margin: 0px;
+   
+  
+  }
+  li{
+    list-style: none;
+    border: 3px solid white;
+   font-weight: 900;
+   display: block;
+  
+   
+   /* padding-left: 3.2vw;
+   padding-right: 3vw;
+   padding-top: 1vh;
+   padding-bottom: 1vh;
+   text-decoration: none; */
+   width: 25%;
+  }
+  li a{
+    display: block;
+   text-decoration: none; /* Remove underline */
+   color: black; /* Default text color */
+   padding: 7%;
+   font-weight: 900;
+ 
+  }
+  nav li a.white {
+    background-color: white; /* Ensure the background color */
+    color: black; /* Text color for active link */
+    position: relative;
+    
+  }
+  
+  

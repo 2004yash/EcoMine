@@ -1,0 +1,114 @@
+
+  .outer-container {
+    display: flex;
+    flex-direction: column; /* Stack the text and component vertically */
+    align-items: start; /* Center the content horizontally */
+    border: 2px solid #000; /* Border around the outer box */
+    border-radius: 10px; /* Rounded corners for the outer box */
+    padding: 20px; /* Space inside the outer box */
+    background-color: transparent; /* Background color for the outer box */
+    width: 50%; /* Width of the outer box */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+  }
+  
+  .text-above {
+    margin-bottom: 20px; /* Space between the text and the component */
+    font-size: 18px; /* Font size for the text */
+    color: white;
+  }
+  .form-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+    color: #ffffff;
+  }
+  
+  input[type="number"],
+  input[type="text"] {
+    width: 60px;
+    padding: 5px;
+    margin-top: 5px;
+    text-align: center;
+    border: 1px solid #555555;
+    border-radius: 4px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  
+  .appliance-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px; /* Adds space between the buttons and input */
+    margin-top: 10px;
+  }
+  
+  .appliance-control button {
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid #555555;
+    background-color: #333333;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .appliance-control button:hover {
+    background-color: #555555; 
+  }
+  
+  
+  .power-source-toggle {
+    display: flex;
+    flex-direction: row; /* Arrange label and radio options in a row */
+    align-items: center; /* Center the content vertically */
+    justify-content: center; /* Center the content horizontally */
+    border: 1px solid yellow; /* Light gray border for visibility */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Adds space around the content */
+    background-color: #333333; /* Dark gray background color for the block */
+    width: 100%; /* Full width of the outer container */
+    height: auto; /* Adjust height based on content */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    margin-top: 10px; /* Add space above the power source toggle */
+    
+  }
+  
+  .toggle-label,
+  .option-text {
+    color: #ffffff; /* White text color for labels */
+    margin-right: 100px; /* Add space after the label */
+  }
+  
+  .toggle-options {
+    display: flex;
+    flex-direction: row; /* Align items in a row */
+    align-items: center; /* Center items vertically within the row */
+    white-space: nowrap; /* Prevent text from wrapping */
+  }
+  
+  .option-label {
+    display: flex;
+    align-items: center; /* Align radio button and text vertically */
+    margin-right: 15px; /* Space between the radio buttons */
+    color: #ffffff; /* White text color for options */
+  }
+  
+  input[type="radio"] {
+    margin-right: 5px; /* Space between radio button and label */
+  }
+
+  
