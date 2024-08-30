@@ -2,12 +2,14 @@
   text-align: center;
   padding: 20px;
   background-color: black;
-  
+  /* background-image: url("../../../public/p1.jpg"); */
+  width: 100%;
   margin-bottom: 10px; /* Reduced margin-bottom */
+  display: block !important;
 }
 
 .hero2 {
-  margin-top: 15%; /* Remove margin-top if needed */
+  margin-top: 5%; 
   background-color: black;
   padding: 20px 0; /* Added padding for spacing */
   text-align: center;
@@ -20,7 +22,7 @@
     text-align: center !important ;
     width: 97% !important;
     align-items: center;
-    margin-left: 4%;
+    /* margin-left: 4%; */
   }
   
   .img-row {

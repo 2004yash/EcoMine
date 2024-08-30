@@ -3,16 +3,19 @@
   justify-content: center;
   align-items: center;
   height: 100vh; /* Full viewport height */
-  background-color: #090505; /* Dark background color */
+  /* background-color: #090505; Dark background color */
   margin-top: -500px; /* Adjust this value to move the form up */
+  background-image: url("../../../public/p1.jpg");
+
 }
 
 
 .signup-form {
   display: flex;
   flex-direction: column;
-  background-color: #000; /* Black background for the form */
-  padding: 20px;
+  background-color: #000; 
+  opacity: 0.8;
+  padding: 30px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 80%; /* Adjusted width to fit the two-column layout */
