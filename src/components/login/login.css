@@ -1,0 +1,99 @@
+/* login.css */
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+
+
+/* General overlay style for the login window */
+/* login.css */
+:root {
+  --unique-background-color: #000; /* Background color of the login window */
+  --unique-text-color: #fff; /* Text color */
+  --unique-input-bg-color: #333; /* Input background color */
+  --unique-input-text-color: #aaa; /* Input placeholder text color */
+  --unique-input-border-radius: 10px; /* Input border radius */
+  --unique-button-bg-color: #00a500; /* Button background color */
+  --unique-button-text-color: #fff; /* Button text color */
+  --unique-button-border-radius: 25px; /* Button border radius */
+  --unique-font-family: 'Electrolize', sans-serif; /* Font */
+}
+
+.login-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.login-window {
+  background-color: var(--unique-background-color);
+  color: var(--unique-text-color);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  width: 300px;
+  text-align: center;
+}
+
+.login-window h2 {
+  margin-bottom: 20px;
+  font-family: var(--unique-font-family);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-family: var(--unique-font-family);
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--unique-input-bg-color);
+  color: var(--unique-input-text-color);
+  border: none;
+  border-radius: var(--unique-input-border-radius);
+  font-family: var(--unique-font-family);
+}
+
+.form-group input::placeholder {
+  color: var(--unique-input-text-color);
+  font-family: var(--unique-font-family);
+}
+
+.btn-login {
+  background-color: var(--unique-button-bg-color);
+  color: var(--unique-button-text-color);
+  padding: 10px 10px;
+  border: none;
+  border-radius: var(--unique-button-border-radius);
+  cursor: pointer;
+  font-family: var(--unique-font-family);
+  font-size: 16px;
+  /* width: 100%; */
+  margin-top: 20px;
+}
+
+.btn-login:hover {
+  background-color: #008c00; /* Darker green on hover */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: var(--unique-text-color);
+  font-size: 20px;
+  cursor: pointer;
+}

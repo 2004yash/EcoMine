@@ -1,102 +1,109 @@
 .signup-container {
-  color: #ccc;
-  height: 100vh;
-  padding: 30px;
-  margin-top: 10%;
-}
-
-h1 {
-  font-size: 1.5rem;
-  margin-left: 2%;
-}
-
-.signup-content {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start; /* Align items at the start */
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  /* background-color: #090505; Dark background color */
+  /* margin-top: -500px; Adjust this value to move the form up */
+  background-image: url("../../../public/p1.jpg");
+
 }
+
 
 .signup-form {
-  width: 50%;
-  padding: 20px;
-  border: none;
+  display: flex;
+  flex-direction: column;
+  background-color: #000; 
+  opacity: 0.8;
+  padding: 30px;
   border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80%; /* Adjusted width to fit the two-column layout */
+  max-width: 800px;
+  box-sizing: border-box;
 }
 
-.form-group {
-  margin-bottom: 15px;
-}
+.signup-heading {
+  color: #fff; /* White text color for heading */
+  font-size: 1.9rem !important;
+  margin-bottom: 50px;
+  text-align: flex-start;
+  align-items: start;
+  margin-top: 2%;
+  }
 
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.form-group input {
-  width: 100%;
-  padding: 8px;
-  color: #ccc;
-  border: none;
-  border-bottom: 2px solid #ddd;
-  background-color: transparent;
-}
-
-.form-group input:focus {
-  outline: none;
-  border-bottom-color: #007bff;
-}
-
-.btn-signup {
-  margin-top: 20%;
-  padding: 10px 35px;
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
-  border-radius: 30px;
-  font-size: 1rem;
-  cursor: pointer;
-  text-align: center;
-  display: inline-block;
-  margin: 10px auto;
-}
-
-.form-options {
+.form-row {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 20px; /* Add gap between columns */
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  width: 48%; /* Adjusted width to fit two columns side by side */
+}
+
+.form-column label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #fff; /* White text color for labels */
+}
+
+.form-column input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-bottom: 2px solid #ddd; /* Line style for input */
+  color: #fff; /* White text for inputs */
+  background: none; /* Remove background */
+  border-radius: 0;
+  outline: none;
+  width: 100%;
+}
+
+.form-column input:focus {
+  border-bottom-color: #007bff; /* Blue line on focus */
+}
+
+.form-actions {
+  display: flex;
+  margin-left: 20%;
+  gap: 30%;
   align-items: center;
 }
 
-.remember-me {
-  display: flex;
-  align-items: center; /* Align checkbox and label text vertically */
-  gap: 8px; /* Add space between the checkbox and label */
-  margin: 0; /* Remove any default margins */
+.form-actions label {
+  margin-bottom: 10px;
+  color: #fff; /* White text for labels */
 }
 
-input[type="checkbox"] {
-  margin: 0;
-  padding: 0;
-  display: inline-block; /* Ensure checkbox stays inline */
-  vertical-align: middle; /* Align checkbox with text */
-}
-
-a:link,
-a:visited {
-  color: #ccc;
-}
-
-.signup-text {
-  width: 40%;
-  padding: 70px;
-  text-align: end;
-}
-
-.signup-text h2 {
-  font-size: 2.7rem;
+.form-actions .login-link {
   margin-bottom: 10px;
 }
 
-.signup-text h2 span {
-  display: block;
-  margin-bottom: 5px;
+.form-actions .login-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.form-actions .login-link a:hover {
+  text-decoration: underline;
+}
+
+.signup-button {
+  background-color: #28a745; /* Green background */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 8%;
+  margin-left: 40%;
+}
+
+.signup-button:hover {
+  background-color: #218838; /* Darker green on hover */
 }
