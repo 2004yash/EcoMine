@@ -12,9 +12,11 @@ const HomePage = () => {
       <Navbar /> {/* Render the Navbar component with JSX */}
       <Hero /> {/* Render the Hero component with JSX */}
       <Menu />
+      <SignUpPage /> 
+      
       {/* <Button /> */}
       {/* <Hero3/> */}
-      <SignUpPage /> {/* Render the SignUpPage component with JSX */}
+      {/* Render the SignUpPage component with JSX */}
     </div>
   );
 }

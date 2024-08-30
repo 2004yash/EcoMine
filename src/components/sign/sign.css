@@ -4,7 +4,7 @@
   align-items: center;
   height: 100vh; /* Full viewport height */
   /* background-color: #090505; Dark background color */
-  margin-top: -500px; /* Adjust this value to move the form up */
+  /* margin-top: -500px; Adjust this value to move the form up */
   background-image: url("../../../public/p1.jpg");
 
 }
