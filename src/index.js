@@ -13,7 +13,7 @@ root.render(
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/carbonform/*" element={<CarbonForm />} />
-        <Route path="/dashboard" element={<dashboard />} /> {/* Add the Dashboard route */}
+        <Route path="/dashboard" element={<Dashboard />} /> {/* Add the Dashboard route */}
         {/* Add more routes as needed */}
       </Routes>
     </Router>
