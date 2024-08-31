@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../components/navbar/navbar'; 
 import Hero from '../components/hero/hero'; 
+import News from '../components/News/NewsComponent'; 
 // import Button from '../components/button/button'; 
 // import Hero3 from '../components/hero2/hero3';
 import SignUpPage from '../components/sign/sign'; // Updated import
@@ -14,6 +15,7 @@ const HomePage = () => {
   
       <Menu />
       <SignUpPage /> 
+      <News />
       
       {/* <Button /> */}
       {/* <Hero3/> */}
