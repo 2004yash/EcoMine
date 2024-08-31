@@ -1,0 +1,87 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e0dada; /* Darker black background color */
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+.dashboard-container {
+    margin: 40px auto; /* Center the container with margin */
+    padding: 20px;
+    max-width: 1200px; /* Max width of the container */
+    background-color: #b99e9e; /* Darker background for the container */
+    border-radius: 8px;
+}
+
+.dashboard-heading {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.input-box label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.input-box input {
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #222; /* Lighter background for input */
+    color: #fff;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.grid-box {
+    background-color: #333; /* Lighter background for grid boxes */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/* Example dimensions for individual boxes */
+.box1 {
+    height: 100px;
+}
+
+.box2 {
+    height: 150px;
+}
+
+.box3 {
+    height: 120px;
+}
+
+.box4 {
+    height: 200px;
+}
+
+.box5 {
+    height: 180px;
+}
+
+.box6 {
+    height: 160px;
+}

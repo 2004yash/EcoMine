@@ -6,6 +6,8 @@ import Hero from '../components/hero/hero';
 import SignUpPage from '../components/sign/sign'; // Updated import
 import Menu from '../components/menu/menu'
 
+
+
 const HomePage = () => {
   return (
     <div>
@@ -13,6 +15,7 @@ const HomePage = () => {
       <Hero /> {/* Render the Hero component with JSX */}
       <Menu />
       <SignUpPage /> 
+    
       
       {/* <Button /> */}
       {/* <Hero3/> */}
