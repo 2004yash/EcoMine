@@ -1,5 +1,9 @@
-import React, { useState, useEffect } from "react";
+
 import './Equipment.css';
+import React, { useState, useEffect } from 'react';
+import Nav from './Nav';
+
+import { useNavigate } from "react-router-dom";
 
 const EquipmentOption = ({ text = "Random Equipment" }) => {
   const [powerSource, setPowerSource] = useState(
@@ -49,8 +53,11 @@ const EquipmentOption = ({ text = "Random Equipment" }) => {
   const handleLoadChange = (num) => {
     setLoad(num);
   };
-
+  const navigate = useNavigate();
   return (
+    <>
+    
+    <Nav/>
     <div className="outer-container">
       <div className="text-above">{text}</div>
 
@@ -118,7 +125,12 @@ const EquipmentOption = ({ text = "Random Equipment" }) => {
           </label>
         </div>
       </div>
+      <div className="footer">
+          <button onClick={() => navigate("/carbonform/offset")} className='btn3'>Next</button>
+          <button onClick={() => navigate(-1)} className='btn2'>Prev</button>
+        </div>
     </div>
+    </>
   );
 };
 

@@ -92,7 +92,7 @@
   text-decoration: underline;
 }
 
-.signup-button {
+.signupbtn {
   background-color: #28a745; /* Green background */
   color: white;
   padding: 10px 20px;
@@ -101,9 +101,11 @@
   font-size: 16px;
   cursor: pointer;
   margin-bottom: 2%;
-  
+ /* margin-left: -60%; */
+ margin-bottom: 5%;
+ margin-top: 5%;
 }
 
-.signup-button:hover {
+.signupbtn:hover {
   background-color: #218838; /* Darker green on hover */
 }
