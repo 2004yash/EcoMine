@@ -3,7 +3,7 @@
     flex-direction:column; /* Stack the text and component vertically */
     align-items: start; /* Center the content horizontally */
     justify-content: center;
-    border: 2px solid #000; /* Border around the outer box */
+    /* Border around the outer box */
     border-radius: 10px; /* Rounded corners for the outer box */
     padding: 20px; /* Space inside the outer box */
     background-color: transparent; /* Background color for the outer box */
@@ -109,3 +109,35 @@
   input[type="radio"] {
     margin-right: 5px; /* Space between radio button and label */
   }
+  .footer{
+    margin-top: 5%;
+    width: 100%;
+    height: 20%;
+   
+   
+
+}
+.btn3{
+    position: relative;
+    background-color:green;
+   
+    padding: 1%;
+    width: 15%;
+    border-radius: 7px;
+    left: 48vw;
+    top: 2.5vw;
+    
+}
+.btn2{
+    position: relative;
+    background-color:green;
+    /* scale: 1.2;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    border-radius: 7px; */
+    left: -8.9vw;
+    top: 2.5vw;
+    padding: 1%;
+    width: 15%;
+    
+}

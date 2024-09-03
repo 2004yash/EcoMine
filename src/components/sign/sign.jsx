@@ -145,7 +145,7 @@ function SignUp() {
             <a href="#!" onClick={handleLoginClick}>Already registered? Login here</a>
           </div>
         </div>
-        <button type="submit" className="signup-button">Sign Up</button>
+        <button type="submit" className="signupbtn">Sign Up</button>
       </form>
 
       {showLoginWindow && <LoginWindow onClose={closeLoginWindow} />}
