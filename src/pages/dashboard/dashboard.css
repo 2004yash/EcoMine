@@ -1,87 +1,427 @@
-
-body {
+body, html {
     margin: 0;
     padding: 0;
-    background-color: #e0dada; /* Darker black background color */
     font-family: Arial, sans-serif;
-    color: #fff;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: #000; /* Black background */
+    color: #fff; /* Default text color */
 }
 
-.dashboard-container {
-    margin: 40px auto; /* Center the container with margin */
-    padding: 20px;
-    max-width: 1200px; /* Max width of the container */
-    background-color: #b99e9e; /* Darker background for the container */
-    border-radius: 8px;
-}
-
-.dashboard-heading {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+.dashboard-header {
+    background-color: rgb(80, 78, 78);
+    padding: 10px;
     text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 3%;
 }
 
-.input-row {
+.dashboard-header h1 {
+    margin: 0;
+    color: white;
+}
+
+
+.input-container {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    justify-content: center;
+    margin: 10px 0;
 }
 
 .input-box {
-    display: flex;
-    flex-direction: column;
-    width: 48%;
+    width: 45%; /* Set the desired width */
+    height: 26px; /* Set the desired height */
+    margin-right: 10px; /* Space between the boxes */
+    margin-bottom: 20px;
+    margin-top: 5px;
+    border: 1px solid #ccc; /* Border similar to the input */
+    border-radius: 5px; /* Rounded corners */
+    background-color: white; /* Background color similar to the input */
+    color: #000; /* Text color for consistency */
+    box-sizing: border-box; /* Ensures padding and borders are included in the element's width and height */
 }
 
-.input-box label {
-    margin-bottom: 10px;
-    font-weight: bold;
+/* To remove margin on the last box */
+.input-container .input-box:last-child {
+    margin-right: 0;
 }
 
-.input-box input {
-    padding: 10px;
-    border: 1px solid #555;
-    border-radius: 4px;
-    background-color: #222; /* Lighter background for input */
-    color: #fff;
-}
-
-.grid-container {
+.dashboard-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    padding: 0 10%; /* Add left and right margins */
+    box-sizing: border-box;
+    height: calc(100vh - 120px); /* Adjusted to fit within 100vh minus header and input */
 }
 
-.grid-box {
-    background-color: #333; /* Lighter background for grid boxes */
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
+.box {
+    background-color: rgb(80, 78, 78);
+   
+    display: flex;
+    flex-direction: column;
+   width:300px;
+   height: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.box1{
+    border: 2px solid yellow;
+}
+.box2{
+    border: 2px solid violet;
+}
+.box3{
+    border:2px solid red;
+}
+.box4{
+    border:2px solid blue;
+}
+.box5{
+    border:2px solid white;
+}
+.box6
+{
+    border: 2px solid blue;
+}
+
+.h1{
+    
+    background-color:white;
+    width: 82%;
+    color: #000;
+   margin-top: 4%;
+   display: inline;
+   margin-bottom: 6%;
+   
+}
+.h1 h1{
+    color: #000;
+    font-size: 1.2rem !important;
+    font-weight: 90;
+}
+.h3{
+    
+    background-color:white;
+    width: 82%;
+    margin-left: 8%;
+    color: #000;
+   margin-top: 4%;
+   display: inline;
+   margin-bottom: 6%;
+   
+}
+.h3 h1{
+    color: #000;
+    font-size: 1.2rem !important;
+    font-weight: 90;
+}
+.h6{
+    
+    background-color:white;
+    width: 82%;
+    margin-left: 8%;
+    color: #000;
+   margin-top: 4%;
+   display: inline;
+   margin-bottom: 6%;
+   
+}
+.h6 h1{
+    color: #000;
+    font-size: 1.2rem !important;
+    font-weight: 90;
+}
+.h5{
+    
+    background-color:white;
+    width: 82%;
+    margin-left: 8%;
+    color: #000;
+   margin-top: 4%;
+   display: inline;
+   margin-bottom: 6%;
+   
+}
+.h5 h1{
+    color: #000;
+    font-size: 1.2rem !important;
+    font-weight: 90;
+}
+.h2{
+    
+    background-color:white;
+    width: 82%;
+    color: #000;
+   margin-top: 4%;
+   display: inline;
+   margin-bottom: 2%;
+   margin-left: 9%;
+   
+}
+.h2 h1{
+    color: #000;
+    font-size: 1.2rem !important;
+    font-weight: 90;
+}
+.h4{
+    
+    background-color:white;
+    width: 82%;
+    color: #000;
+   margin-top: 4%;
+   display: inline;
+   margin-bottom: 2%;
+   margin-left: 9%;
+   
+}
+.h4 h1{
+    color: #000;
+    font-size: 1.2rem !important;
+    font-weight: 90;
+}
+
+p1{
+    font-size: 1.3rem !important;
+    font-weight: 100;
+    margin-top: 10%;
+    margin-left: 15%;
+}
+.bo3{
+    display:flex;
+   
+}
+.box3 span{
+    font-size: 1.3rem !important;
+    font-weight: 100;
+    margin-top: 2%;
+    margin-left: 4%;
+   
+}
+.box6 span{
+    font-size: 1.3rem !important;
+    font-weight: 100;
+    margin-top: 10%;
+    margin-left: 9%;
+   
+}
+.box4 span{
+    font-size: 1.3rem !important;
+    font-weight: 100;
+    margin-top: 16%;
+    margin-left: 10%;
+   
+}
+.b1{
+    background-color: darkgoldenrod;
+    margin-left:15% ;
+    margin-top: 15%;
+    width:100px;
+    height:50px;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+}
+.b1 h{
+    display: flex;
+    display: flex;
+    justify-content: center; /* Horizontally centers */
+    align-items: center; /* Vertically centers */
+    height: 100%; /* Ensure the container has a defined height */
+margin-top: 5% !important;
+font-size: 1.2rem;
+font-weight: 500;
+}
+
+.bo{
+    display: flex;
+    
+}
+.bo2{
+    display: flex;
+    margin-top: 6%;}
+    
+    .b3{
+        display: flex;
+        display: flex;
+        justify-content: center; /* Horizontally centers */
+        align-items: center; /* Vertically centers */
+        height: 100%; /* Ensure the container has a defined height */
+    margin-top: 10% !important;
     font-size: 1.2rem;
-    color: #fff;
+    width:120px;
+    height:50px;
+    background-color: gray;
+    font-weight: 500;
+    margin-left: 3%;
+    cursor:pointer;
+    
+    }
+    .b3 h{
+        display: flex;
+        display: flex;
+        justify-content: center; /* Horizontally centers */
+        align-items: center; /* Vertically centers */
+        height: 100%; /* Ensure the container has a defined height */
+   
+    font-size: 1.2rem;
+    font-weight: 500;
+    }
+.box3 span{
+    margin-bottom: 0px !important;
+}
+.b2 {
+    display: flex;
+    display: flex;
+    justify-content: center; /* Horizontally centers */
+    align-items: center; /* Vertically centers */
+    height: 100%; /* Ensure the container has a defined height */
+margin-top: 6% !important;
+font-size: 1.2rem;
+width:120px;
+height:50px;
+background-color: violet;
+font-weight: 500;
+margin-left: 15%;
+margin-top: 9%;
+cursor:pointer;
+}
+.bo span {
+    color: yellow;
+    font-weight: 900;
+    margin-left: 10%;
+    margin-bottom: 50%;
+    font-size: 2.9rem;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+    font-style:oblique;
 }
 
-/* Example dimensions for individual boxes */
-.box1 {
-    height: 100px;
+span sub {
+    transform: scaleY(1.9); /* Elongates the height of the subscript */
+    display: inline-block;
+    font-size: 1.5rem;
+    
+}
+.s1 {
+    color: violet;
+    font-weight: 900;
+    margin-left: 20%;
+    margin-bottom: 60%;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+    font-style:oblique;
+}
+.s2{
+    font-size: 3rem;
+    color: violet;
+    margin-right: 10%;
 }
 
-.box2 {
-    height: 150px;
+
+.imgg {
+   
+    background-size: cover;
+    background-repeat: no-repeat;
+  
+    width: 80px !important; 
+    height: 80px !important;
+  margin-left: 20%;
+  margin-bottom: 20%;
 }
 
-.box3 {
-    height: 120px;
+.b4{
+    display: flex;
+    display: flex;
+    justify-content: center; /* Horizontally centers */
+    align-items: center; /* Vertically centers */
+    height: 100%; /* Ensure the container has a defined height */
+margin-top: 16% !important;
+cursor:pointer;
+font-size: 1.2rem;
+width:120px;
+height:50px;
+background-color: gray;
+font-weight: 500;
+margin-left: 9%;
+
+}
+.b4 h{
+    display: flex;
+    display: flex;
+    justify-content: center; /* Horizontally centers */
+    align-items: center; /* Vertically centers */
+    height: 100%; /* Ensure the container has a defined height */
+
+font-size: 1.2rem;
+font-weight: 500;
+}
+  
+.b6{
+    display: flex;
+    display: flex;
+    justify-content: center; /* Horizontally centers */
+    align-items: center; /* Vertically centers */
+    height: 100%; /* Ensure the container has a defined height */
+margin-top: 10% !important;
+font-size: 1.2rem;
+width:120px;
+height:50px;
+background-color: gray;
+font-weight: 500;
+margin-left: 9%;
+cursor:pointer;
+
+}
+.b6 h{
+    display: flex;
+    display: flex;
+    justify-content: center; /* Horizontally centers */
+    align-items: center; /* Vertically centers */
+    height: 100%; /* Ensure the container has a defined height */
+
+font-size: 1.2rem;
+font-weight: 500;
+}
+.bo6{
+    display: flex;
+}
+.box6 span{
+margin-bottom: 0px !important
+}
+.imgg img {
+    width: 100%; /* Make the image fit the container */
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Ensure there's no extra space */
+    margin: 0 auto; /* Center the image horizontally */
+    
 }
 
-.box4 {
-    height: 200px;
+.imggg{
+    
+   
+        background-size: cover;
+        background-repeat: no-repeat;
+      
+        width: 290px !important; 
+        height: 900px !important;
+     
+      
+     
+    
 }
-
-.box5 {
-    height: 180px;
-}
-
-.box6 {
-    height: 160px;
+.imggg img{
+    width: 100%; /* Make the image fit the container */
+    height: auto; /* Maintain the aspect ratio */
+    
+    width: 270px !important; 
+    height: 200px !important;
+ 
+    display: block;
+    margin-left: 5% !important;
+    margin: 0 auto; /* Center the image horizontally */
 }
