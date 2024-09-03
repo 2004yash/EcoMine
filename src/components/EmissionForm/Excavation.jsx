@@ -4,30 +4,43 @@ import Dropdown from './Dropdown';
 import './Excavation.css';
 import Input from './Input';
 import { useNavigate } from "react-router-dom";
-
+import { CarbonEmissionFromFuel, CarbonEmissionFromElectricity } from "../../CarbonCalculator";
 const Excavation = () => {
   const navigate = useNavigate();
 
   // Initialize state with values from localStorage, if they exist
   const [inputValues, setInputValues] = useState({
     fuelUnits: localStorage.getItem('fuelUnits') || '',
-    fuelEmission: localStorage.getItem('fuelEmission') || '',
+    fuelEmission: localStorage.getItem('fuelEmission') || 0,
     electricityUnits: localStorage.getItem('electricityUnits') || '',
-    electricityEmission: localStorage.getItem('electricityEmission') || '',
+    electricityEmission: localStorage.getItem('electricityEmission') || 0,
   });
-
+  const [selectedFuelInExcavation, setSelectedFuel] = useState(localStorage.getItem('selectedFuelInExcavation') || '');
   // Save input values to localStorage whenever they change
   useEffect(() => {
     Object.keys(inputValues).forEach(key => {
       localStorage.setItem(key, inputValues[key]);
     });
-  }, [inputValues]);
+    localStorage.setItem('selectedFuelInExcavation', selectedFuelInExcavation);
+    var newElectricEmission  = CarbonEmissionFromElectricity(inputValues.electricityUnits);
+    var newFuelEmission = CarbonEmissionFromFuel(selectedFuelInExcavation , inputValues.fuelUnits);
+    console.log(selectedFuelInExcavation);
+    localStorage.setItem('fuelEmission',newFuelEmission);
+    localStorage.setItem('electricityEmission',newElectricEmission);
+    setInputValues((prevValues) => ({
+      ...prevValues,
+      fuelEmission: newFuelEmission,
+      electricityEmission: newElectricEmission,
+    }));
+  }, [inputValues,selectedFuelInExcavation]);
 
   // Handler to update state
   const handleInputChange = (field) => (e) => {
     setInputValues({ ...inputValues, [field]: e.target.value });
   };
-
+  const handleDropdownChange = (e) => {
+    setSelectedFuel(e.target.value);
+  };
   return (
     <>
       <Nav />
@@ -37,7 +50,7 @@ const Excavation = () => {
             <h3>1. Fuel consumption per month</h3>
           </div>
           <div className="inputF">
-            <Dropdown />
+          <Dropdown value={selectedFuelInExcavation} onChange={handleDropdownChange} />
             <Input
               placeholder="Units[kg]"
               value={inputValues.fuelUnits}
@@ -45,8 +58,8 @@ const Excavation = () => {
             />
             <Input
               placeholder="Emission[kgCO2]"
-              value={inputValues.fuelEmission}
-              onChange={handleInputChange('fuelEmission')}
+              value={inputValues.fuelEmission} readonly
+              // onChange={handleInputChange('fuelEmission')}
             />
           </div>
         </div>
@@ -62,8 +75,8 @@ const Excavation = () => {
             />
             <Input
               placeholder="Emission[kgCO2]"
-              value={inputValues.electricityEmission}
-              onChange={handleInputChange('electricityEmission')}
+              value={inputValues.electricityEmission} readonly
+              // onChange={handleInputChange('electricityEmission')}
             />
           </div>
         </div>

@@ -52,8 +52,8 @@ const Excavation = () => {
             />
             <Input
               placeholder="Emission[kgCO2]"
-              value={inputValues.fuelEmissions}
-              onChange={handleInputChange('fuelEmissions')}
+              value={inputValues.fuelEmissions} readonly
+              // onChange={handleInputChange('fuelEmissions')}
             />
           </div>
         </div>
@@ -69,8 +69,8 @@ const Excavation = () => {
             />
             <Input
               placeholder="Emission[kgCO2]"
-              value={inputValues.electricityEmissions}
-              onChange={handleInputChange('electricityEmissions')}
+              value={inputValues.electricityEmissions} readonly
+              // onChange={handleInputChange('electricityEmissions')}
             />
           </div>
         </div>
@@ -85,3 +85,4 @@ const Excavation = () => {
 }
 
 export default Excavation;
+ 
