@@ -5,15 +5,15 @@
 /* General overlay style for the login window */
 /* login.css */
 :root {
-  --unique-background-color: #000; /* Background color of the login window */
-  --unique-text-color: #fff; /* Text color */
-  --unique-input-bg-color: #333; /* Input background color */
-  --unique-input-text-color: #aaa; /* Input placeholder text color */
-  --unique-input-border-radius: 10px; /* Input border radius */
-  --unique-button-bg-color: #00a500; /* Button background color */
-  --unique-button-text-color: #fff; /* Button text color */
-  --unique-button-border-radius: 25px; /* Button border radius */
-  --unique-font-family: 'Electrolize', sans-serif; /* Font */
+  --unique-background-color: #000;
+  --unique-text-color: #fff; 
+  --unique-input-bg-color: #333;
+  --unique-input-text-color: #aaa; 
+  --unique-input-border-radius: 10px; 
+  --unique-button-bg-color: #00a500; 
+  --unique-button-text-color: #fff; 
+  --unique-button-border-radius: 25px; 
+  --unique-font-family: 'Electrolize', sans-serif; 
 }
 
 .login-overlay {

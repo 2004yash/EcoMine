@@ -7,6 +7,8 @@ import News from '../components/News/NewsComponent';
 import SignUpPage from '../components/sign/sign'; // Updated import
 import Menu from '../components/menu/menu'
 
+
+
 const HomePage = () => {
   return (
     <div>
