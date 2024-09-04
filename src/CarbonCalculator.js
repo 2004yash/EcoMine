@@ -17,7 +17,7 @@
 //     CarbonEmissionFromMining(eletricityConsumedForMiningEquip, "electric");
 //   FinalCarbonEmission += methaneEmission(methaneEmission, 25);
 // }
-function CarbonEmissionFromFuel(fuelType , fuelConsumed)
+export function CarbonEmissionFromFuel(fuelType , fuelConsumed)
 {
   switch(fuelType) {
     case "anthracite":
@@ -28,7 +28,7 @@ function CarbonEmissionFromFuel(fuelType , fuelConsumed)
     return fuelConsumed*1.53;
     case "subbituminous":
     return fuelConsumed*1.85;
-    case "Diesel":
+    case "diesel":
     return fuelConsumed*2.73;
     case "subbituminous":
     return fuelConsumed*1.85;
@@ -46,8 +46,8 @@ function CarbonEmissionFromFuel(fuelType , fuelConsumed)
     return 0;
   }
 }
-function CarbonEmissionFromElectricity(units) {
-  return units;
+export function CarbonEmissionFromElectricity(units) {
+  return (units*1.0035).toFixed(2);
 }
 function CarbonEmissionFromElectricEquip(load,amount,avgUse) {
   return load*amount*avgUse*0.031;
