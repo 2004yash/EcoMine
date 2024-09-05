@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Marketplace.css';
+import './Marketplace.module.css';
 
 // Simulated blockchain function for recording transactions
 const recordTransactionOnBlockchain = (seller, buyer, credits) => {

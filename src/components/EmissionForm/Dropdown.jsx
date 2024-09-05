@@ -1,5 +1,5 @@
 import React from 'react';
-import './Dropdown.css';
+import './Dropdown.module.css';
 
 const Dropdown = ({ value, onChange }) => {
     return (
