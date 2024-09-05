@@ -18,6 +18,7 @@ root.render(
         <Route path="/carbon" element={<Marketplace />} />
         <Route path="/dashboard" element={<Dashboard />} /> {/* Add the Dashboard route */}
         {/* Add more routes as needed */}
+        <Route path="/result" element={<Result />} />
       </Routes>
     </Router>
   </React.StrictMode>
