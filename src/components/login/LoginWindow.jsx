@@ -1,7 +1,7 @@
-// LoginWindow.js
 import React, { useState } from 'react';
 import './login.css'; // CSS file for dark theme
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const LoginWindow = ({ onClose }) => {
   const [loginForm, setLoginForm] = useState({
@@ -10,6 +10,7 @@ const LoginWindow = ({ onClose }) => {
   });
 
   const auth = getAuth();
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,6 +30,7 @@ const LoginWindow = ({ onClose }) => {
         const user = userCredential.user;
         console.log('Logged in:', user);
         onClose(); // Close the login window after successful login
+        navigate('/dashboard'); // Navigate to /dashboard after successful login
       })
       .catch((error) => {
         console.error('Login failed:', error);
