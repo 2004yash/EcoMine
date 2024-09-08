@@ -1,4 +1,4 @@
-ul{
+nav ul{
     display: flex;
     justify-content: space-between;
     padding: 0px;
@@ -6,7 +6,7 @@ ul{
    
   
   }
-  li{
+ nav li{
     list-style: none;
     border: 3px solid white;
    font-weight: 900;
@@ -20,7 +20,7 @@ ul{
    text-decoration: none; */
    width: 25%;
   }
-  li a{
+ nav li a{
     display: block;
    text-decoration: none; /* Remove underline */
    color: black; /* Default text color */
