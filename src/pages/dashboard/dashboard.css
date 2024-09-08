@@ -1,0 +1,156 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: #000; /* Black background */
+    color: #fff; /* Default text color */
+}
+
+.unique-dashboard-header {
+    background-color: rgb(80, 78, 78);
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 3%;
+}
+
+.unique-dashboard-header h1 {
+    margin: 0;
+    color: white;
+}
+
+.unique-input-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.unique-input-box {
+    width: 45%;
+    height: 26px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    color: #000;
+    box-sizing: border-box;
+}
+
+.unique-input-container .unique-input-box:last-child {
+    margin-right: 0;
+}
+
+.unique-dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 0 10%;
+    box-sizing: border-box;
+    height: calc(100vh - 120px);
+}
+
+.unique-box {
+    background-color: rgb(80, 78, 78);
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.unique-box1 {
+    border: 2px solid yellow;
+}
+
+.unique-box2 {
+    border: 2px solid violet;
+}
+
+.unique-box3 {
+    border: 2px solid red;
+}
+
+.unique-box4 {
+    border: 2px solid blue;
+}
+
+.unique-box5 {
+    border: 2px solid white;
+}
+
+.unique-box6 {
+    border: 2px solid blue;
+}
+
+.unique-h1, .unique-h2, .unique-h3, .unique-h4, .unique-h5, .unique-h6 {
+    background-color: white;
+    width: 82%;
+    color: #000;
+    margin-top: 4%;
+    margin-left: 9%;
+    display: inline;
+    margin-bottom: 6%;
+}
+
+.unique-h1 h1, .unique-h2 h1, .unique-h3 h1, .unique-h4 h1, .unique-h5 h1, .unique-h6 h1 {
+    font-size: 1.2rem;
+    font-weight: 90;
+}
+
+.unique-bo, .unique-bo2, .unique-bo3, .unique-bo4, .unique-bo6 {
+    display: flex;
+}
+
+.unique-b1, .unique-b2, .unique-b3, .unique-b4, .unique-b6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.unique-b1 {
+    background-color: darkgoldenrod;
+    width: 100px;
+    margin-left: 15%;
+    margin-top: 15%;
+}
+
+.unique-b2 {
+    background-color: violet;
+    width: 120px;
+    margin-left: 15%;
+    margin-top: 9%;
+}
+
+.unique-b3, .unique-b4, .unique-b6 {
+    background-color: gray;
+    width: 120px;
+    margin-left: 9%;
+}
+
+.unique-s1, .unique-s2 {
+    font-size: 2rem;
+    font-style: oblique;
+    font-weight: 900;
+    margin-left: 20%;
+}
+
+.unique-img, .unique-img-graph {
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 20%;
+}
+
+.unique-img img, .unique-img-graph img {
+    width: 100%;
+    height: auto;
+}

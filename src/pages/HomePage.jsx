@@ -8,6 +8,8 @@ import Chatbot from '../components/Chatbot/ChatbotComponent'
 import SignUpPage from '../components/sign/sign'; // Updated import
 import Menu from '../components/menu/menu'
 
+
+
 const HomePage = () => {
   return (
     <div>
