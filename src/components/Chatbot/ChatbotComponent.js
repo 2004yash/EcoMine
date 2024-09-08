@@ -2,28 +2,25 @@ import { Webchat, WebchatProvider, Fab, getClient } from "@botpress/webchat";
 import { buildTheme } from "@botpress/webchat-generator";
 import { useState, useEffect } from "react";
 
-// Define the theme and style for the webchat
 const { theme, style } = buildTheme({
   themeName: "galaxy",
   themeColor: "#634433",
 });
 
-// Add your Client ID here
+
 const clientId = "7ec8a49a-bbc0-4d9e-b215-36810c72fbc0";
 
 const ChatbotComponent = () => {
   const client = getClient({ clientId });
   const [isWebchatOpen, setIsWebchatOpen] = useState(false);
 
-  // Unique key to force reloading the Webchat component
   const [chatKey, setChatKey] = useState(Date.now());
 
-  // Function to toggle the visibility of the webchat
   const toggleWebchat = () => {
     setIsWebchatOpen((prevState) => !prevState);
   };
 
-  // Reload chat on page refresh
+
   useEffect(() => {
     setChatKey(Date.now()); // Update key on component mount (e.g., page refresh)
   }, []);
