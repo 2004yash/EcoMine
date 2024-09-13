@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botpress Chatbot</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .chat-container {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="chat-container"></div>
+  <script src="https://cdn.botpress.cloud/webchat/v0/botpress-webchat.js"></script>
+  <script>
+    const clientId = "7ec8a49a-bbc0-4d9e-b215-36810c72fbc0";
+    const { Webchat, WebchatProvider, getClient } = window["@botpress/webchat"];
+    const client = getClient({ clientId });
+    const { theme, style } = window["@botpress/webchat-generator"].buildTheme({
+      themeName: "galaxy",
+      themeColor: "#634433",
+    });
+
+    const container = document.getElementById('chat-container');
+    WebchatProvider({
+      theme,
+      client,
+      container,
+      width: '100%',
+      height: '100%',
+    });
+  </script>
+</body>
+</html>

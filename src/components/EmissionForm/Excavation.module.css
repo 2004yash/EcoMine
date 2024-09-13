@@ -46,11 +46,11 @@
     position: relative;
     background-color:green;
    
-    padding: 1%;
-    width: 15%;
+    /* padding: 1%; */
+    /* width: 15%; */
     border-radius: 7px;
-    left: 49vw;
-    top: 2.5vw;
+    /* left: 49vw; */
+    /* top: 2.5vw; */
     
 }
 .btn{

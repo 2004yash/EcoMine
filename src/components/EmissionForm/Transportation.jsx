@@ -4,7 +4,7 @@ import Dropdown from './Dropdown';
 import './Transportation.css';
 import Input from './Input';
 import { useNavigate } from "react-router-dom";
-
+import { CarbonEmissionFromFuel, CarbonEmissionFromElectricity } from "../../CarbonCalculator";
 const Excavation = () => {
   const navigate = useNavigate();
 
@@ -23,7 +23,15 @@ const Excavation = () => {
     Object.keys(inputValues).forEach(key => {
       localStorage.setItem(key, inputValues[key]);
     });
+   
     localStorage.setItem('selectedFuel', selectedFuel);
+    var newElectricEmission  = CarbonEmissionFromElectricity(inputValues.electricityUnit);
+    var newFuelEmission = CarbonEmissionFromFuel(selectedFuel, inputValues.fuelUnit);
+    setInputValues((prevValues) => ({
+      ...prevValues,
+      fuelEmissions: newFuelEmission,
+      electricityEmissions: newElectricEmission,
+    }));
   }, [inputValues, selectedFuel]);
 
   // Handler to update state
@@ -85,4 +93,3 @@ const Excavation = () => {
 }
 
 export default Excavation;
- 

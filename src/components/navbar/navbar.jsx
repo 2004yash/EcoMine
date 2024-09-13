@@ -1,25 +1,23 @@
 import React from 'react';
-import './navbar.css'; // Import the CSS for styling
+import { Link } from 'react-router-dom';
+import './navbar.css'; 
 
 function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Left-side menu items */}
-        <div className="menu-left">
-          <a href="#home" className="nav-link">menu</a>
-          <a href="#about" className="nav-link">menu</a>
-        </div>
-
-        {/* Centered logo */}
+        {/* Logo */}
         <div className="logo">
           <img src={`${process.env.PUBLIC_URL}/logo.jpg`} alt="Logo" className="logo-img" />
         </div>
 
-        {/* Right-side menu items */}
+        {/* Right-side menu */}
         <div className="menu-right">
-          <a href="#services" className="nav-link">menu</a>
-          <a href="#contact" className="nav-link">menu</a>
+          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/carbonform" className="nav-link">Carbon Form</Link>
+          <Link to="/carbon" className="nav-link">Marketplace</Link>
+          <Link to="/result" className="nav-link">Result</Link>
+          <Link to="/dashboard" className="nav-link">Profile</Link> {/* Profile now links to Dashboard */}
         </div>
       </div>
     </nav>
@@ -27,5 +25,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-
