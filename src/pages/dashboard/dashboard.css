@@ -4,39 +4,41 @@ body, html {
     font-family: Arial, sans-serif;
     height: 100vh;
     box-sizing: border-box;
-    background-color: #000;
-    color: #fff;
+    background-color: #000; /* Black background */
+    color: #fff; /* Default text color */
 }
 
 .unique-dashboard-header {
-    background-color: #504E4E;
+    background-color: rgb(80, 78, 78);
     padding: 10px;
     text-align: center;
     width: 100%;
+    box-sizing: border-box;
     margin-bottom: 3%;
 }
 
 .unique-dashboard-header h1 {
     margin: 0;
     color: white;
-    font-size: 2rem;
 }
 
 .unique-input-container {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 .unique-input-box {
     width: 45%;
     height: 26px;
     margin-right: 10px;
+    margin-bottom: 20px;
+    margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: white;
     color: #000;
-    padding: 5px;
+    box-sizing: border-box;
 }
 
 .unique-input-container .unique-input-box:last-child {
@@ -48,19 +50,18 @@ body, html {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 0 10%;
+    box-sizing: border-box;
     height: calc(100vh - 120px);
 }
 
 .unique-box {
-    background-color: #504E4E;
+    background-color: rgb(80, 78, 78);
     display: flex;
     flex-direction: column;
     width: 300px;
     height: 300px;
     border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    justify-content: space-between;
+    border-radius: 5px;
 }
 
 .unique-box1 {
@@ -89,20 +90,21 @@ body, html {
 
 .unique-h1, .unique-h2, .unique-h3, .unique-h4, .unique-h5, .unique-h6 {
     background-color: white;
+    width: 82%;
     color: #000;
-    width: 85%;
-    margin: 4% auto 6%;
-    text-align: center;
+    margin-top: 4%;
+    margin-left: 9%;
+    display: inline;
+    margin-bottom: 6%;
 }
 
 .unique-h1 h1, .unique-h2 h1, .unique-h3 h1, .unique-h4 h1, .unique-h5 h1, .unique-h6 h1 {
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 90;
 }
 
 .unique-bo, .unique-bo2, .unique-bo3, .unique-bo4, .unique-bo6 {
     display: flex;
-    justify-content: center;
 }
 
 .unique-b1, .unique-b2, .unique-b3, .unique-b4, .unique-b6 {
@@ -113,25 +115,26 @@ body, html {
     font-size: 1.2rem;
     font-weight: 500;
     cursor: pointer;
-    border-radius: 5px;
 }
 
 .unique-b1 {
     background-color: darkgoldenrod;
     width: 100px;
-    margin: 15% auto;
+    margin-left: 15%;
+    margin-top: 15%;
 }
 
 .unique-b2 {
     background-color: violet;
     width: 120px;
-    margin: 9% auto;
+    margin-left: 15%;
+    margin-top: 9%;
 }
 
 .unique-b3, .unique-b4, .unique-b6 {
     background-color: gray;
     width: 120px;
-    margin: 9% auto;
+    margin-left: 9%;
 }
 
 .unique-s1, .unique-s2 {
