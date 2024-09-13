@@ -3,15 +3,19 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase'; // Import your Firebase configuration
 import './dashboard.css';
+import { useNavigate, useLocation } from 'react-router-dom'; // Import useNavigate and useLocation
 
 const Dashboard = () => {
-  const [userCredits, setUserCredits] = useState(0);
   const [uniqueCompanyName, setUniqueCompanyName] = useState('');
   const [uniqueEmail, setUniqueEmail] = useState('');
-  const auth = getAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  const uid = location.state?.uid; // Get UID passed from login
 
   useEffect(() => {
-    const fetchUserData = async (uid) => {
+    const auth = getAuth();
+    const fetchUniqueData = async (uid) => {
       try {
         const docRef = doc(db, 'users', uid);
         const docSnap = await getDoc(docRef);
@@ -20,7 +24,6 @@ const Dashboard = () => {
           const userData = docSnap.data();
           setUniqueCompanyName(userData.companyName || '');
           setUniqueEmail(userData.email || '');
-          setUserCredits(userData.credits || 0); // Assuming credits are also stored in the same document
         } else {
           console.log('No such document!');
         }
@@ -29,16 +32,19 @@ const Dashboard = () => {
       }
     };
 
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        fetchUserData(user.uid);
+    onAuthStateChanged(auth, (user) => {
+      if (user || uid) {
+        fetchUniqueData(user ? user.uid : uid);
       } else {
         console.log('No user is logged in');
       }
     });
+  }, [uid]);
 
-    return () => unsubscribe();
-  }, [auth]);
+  // Navigate to Marketplace and pass user info
+  const goToMarketplace = () => {
+    navigate('/marketplace', { state: { uid, companyName: uniqueCompanyName, email: uniqueEmail } });
+  };
 
   return (
     <div>
@@ -48,7 +54,6 @@ const Dashboard = () => {
       <div className="unique-input-container">
         <div className="unique-input-box">Company Name: {uniqueCompanyName}</div>
         <div className="unique-input-box">Email ID: {uniqueEmail}</div>
-        <div className="unique-input-box">Your Credits: {userCredits}</div>
       </div>
       <div className="unique-dashboard-container">
         <div className="unique-box unique-box1">
@@ -77,11 +82,11 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="unique-box unique-box4">
-          <div className="unique-h4"><h1>Carbon Credits</h1></div>
-          <span>Guidance and <br />Support from <br />Leading<br /> Mentors</span>
+          <div className="unique-h4"><h1>Marketplace</h1></div>
+          <span>Buy and Sell Carbon Credits<br />Easily in the Marketplace</span>
           <div className="unique-bo4">
-            <div className="unique-b4"><h>Click here</h></div>
-            <div className="unique-img"><img src={`${process.env.PUBLIC_URL}/cc.png`} alt="cc" /></div>
+            <button className="unique-b4" onClick={goToMarketplace}><h>Go to Marketplace</h></button>
+            <div className="unique-img"><img src={`${process.env.PUBLIC_URL}/marketplace.png`} alt="marketplace" /></div>
           </div>
         </div>
         <div className="unique-box unique-box5">
@@ -92,7 +97,7 @@ const Dashboard = () => {
         </div>
         <div className="unique-box unique-box6">
           <div className="unique-h6"><h1>Mentor Connect</h1></div>
-          <span>Guidance and <br />Support from <br />Leading <br />Mentors</span>
+          <span>Guidance and <br />Support from <br />Leading Mentors</span>
           <div className="unique-bo6">
             <div className="unique-b6"><h>Connect</h></div>
             <div className="unique-img"><img src={`${process.env.PUBLIC_URL}/connect.jpg`} alt="connect" /></div>
