@@ -1,62 +1,63 @@
 import React, { useState, useEffect } from 'react';
-import './Marketplace.module.css';
-
-// Simulated blockchain function for recording transactions
-const recordTransactionOnBlockchain = (seller, buyer, credits) => {
-  // For the sake of this example, we'll just log the transaction.
-  console.log(`Transaction: ${seller} sold ${credits} credits to ${buyer}.`);
-  // In a real-world scenario, this function would interact with a blockchain smart contract.
-};
-
-// Initial list of carbon credits
-const initialCredits = [
-  { id: 1, seller: 'Company A', amount: 10, price: 100 },
-  { id: 2, seller: 'Company B', amount: 15, price: 150 },
-  { id: 3, seller: 'Company C', amount: 20, price: 200 },
-];
+import { getAuth } from 'firebase/auth';
+import { collection, getDocs, updateDoc, doc } from 'firebase/firestore';
+import { db } from '../../firebase'; // Assuming firebase is configured
 
 const Marketplace = () => {
-  const [credits, setCredits] = useState(initialCredits);
+  const [credits, setCredits] = useState([]);
+  const [userCredits, setUserCredits] = useState(0);
   const [buyer, setBuyer] = useState('');
+  const auth = getAuth();
 
   useEffect(() => {
-    // Fetch credits from an API or database in a real-world app
+    // Fetch available credits
+    const fetchCredits = async () => {
+      const creditsCollection = collection(db, 'credits');
+      const creditSnapshot = await getDocs(creditsCollection);
+      const creditsList = creditSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      setCredits(creditsList);
+    };
+
+    // Fetch current user data
+    const fetchUserCredits = async () => {
+      const user = auth.currentUser;
+      if (user) {
+        const userRef = doc(db, 'users', user.uid);
+        const userSnapshot = await getDocs(userRef);
+        const userData = userSnapshot.data();
+        setUserCredits(userData.credits || 0);
+      }
+    };
+
+    fetchCredits();
+    fetchUserCredits();
   }, []);
 
-  const handleBuy = (creditId) => {
+  const handleBuy = async (creditId) => {
     const credit = credits.find(c => c.id === creditId);
-    if (credit && buyer) {
-      // Record the transaction on the blockchain
-      recordTransactionOnBlockchain(credit.seller, buyer, credit.amount);
-
-      // Remove the credit from the marketplace (as it's been bought)
+    const user = auth.currentUser;
+    if (credit && user) {
+      // Assume you have a function `updateUserCredits` for this:
+      await updateDoc(doc(db, 'users', user.uid), {
+        credits: userCredits + credit.amount
+      });
+      // Remove credit from marketplace
       setCredits(credits.filter(c => c.id !== creditId));
-      alert(`You bought ${credit.amount} credits from ${credit.seller}`);
-    } else {
-      alert('Please enter your name to buy credits.');
+      alert(`You bought ${credit.amount} credits`);
     }
   };
 
   return (
-    <div className="marketplace">
-      <h1>Carbon Credit Marketplace</h1>
-      <input
-        type="text"
-        placeholder="Enter your name"
-        value={buyer}
-        onChange={(e) => setBuyer(e.target.value)}
-        className="buyer-input"
-      />
-      <div className="credits-list">
-        {credits.map(credit => (
-          <div key={credit.id} className="credit-card">
-            <h2>{credit.seller}</h2>
-            <p>Amount: {credit.amount} credits</p>
-            <p>Price: ${credit.price}</p>
-            <button onClick={() => handleBuy(credit.id)}>Buy Credits</button>
-          </div>
-        ))}
-      </div>
+    <div>
+      <h1>Marketplace</h1>
+      {credits.map(credit => (
+        <div key={credit.id}>
+          <h2>{credit.seller}</h2>
+          <p>{credit.amount} credits for ${credit.price}</p>
+          <button onClick={() => handleBuy(credit.id)}>Buy</button>
+        </div>
+      ))}
+      <p>Your Credits: {userCredits}</p>
     </div>
   );
 };

@@ -5,12 +5,13 @@ import { db } from '../../firebase'; // Import your Firebase configuration
 import './dashboard.css';
 
 const Dashboard = () => {
+  const [userCredits, setUserCredits] = useState(0);
   const [uniqueCompanyName, setUniqueCompanyName] = useState('');
   const [uniqueEmail, setUniqueEmail] = useState('');
+  const auth = getAuth();
 
   useEffect(() => {
-    const auth = getAuth();
-    const fetchUniqueData = async (uid) => {
+    const fetchUserData = async (uid) => {
       try {
         const docRef = doc(db, 'users', uid);
         const docSnap = await getDoc(docRef);
@@ -19,6 +20,7 @@ const Dashboard = () => {
           const userData = docSnap.data();
           setUniqueCompanyName(userData.companyName || '');
           setUniqueEmail(userData.email || '');
+          setUserCredits(userData.credits || 0); // Assuming credits are also stored in the same document
         } else {
           console.log('No such document!');
         }
@@ -27,14 +29,16 @@ const Dashboard = () => {
       }
     };
 
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        fetchUniqueData(user.uid);
+        fetchUserData(user.uid);
       } else {
         console.log('No user is logged in');
       }
     });
-  }, []);
+
+    return () => unsubscribe();
+  }, [auth]);
 
   return (
     <div>
@@ -44,6 +48,7 @@ const Dashboard = () => {
       <div className="unique-input-container">
         <div className="unique-input-box">Company Name: {uniqueCompanyName}</div>
         <div className="unique-input-box">Email ID: {uniqueEmail}</div>
+        <div className="unique-input-box">Your Credits: {userCredits}</div>
       </div>
       <div className="unique-dashboard-container">
         <div className="unique-box unique-box1">
