@@ -24,6 +24,7 @@
   h1{
     color: white;
     text-align: center;
+    font-size: 50px !important;
   }
   .news-card.hover {
     transform: scale(1.05);
