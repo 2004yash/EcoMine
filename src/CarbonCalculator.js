@@ -52,3 +52,28 @@ export function CarbonEmissionFromElectricity(units) {
 function CarbonEmissionFromElectricEquip(load,amount,avgUse) {
   return load*amount*avgUse*0.031;
 }
+function totalCarbonEmission() {
+  // Retrieve and shorten variable names for emissions
+  var transElecEm = Number(localStorage.getItem('electricityEmissions')) || 0;
+  var transFuelEm = Number(localStorage.getItem('fuelEmissions')) || 0;
+  var excElecEm = Number(localStorage.getItem('electricityEmission')) || 0;
+  var excFuelEm = Number(localStorage.getItem('fuelEmission')) || 0;
+
+  // Calculate the total emissions
+  var totalEmission = transElecEm + transFuelEm + excElecEm + excFuelEm;
+
+  // Retrieve the carbon offset values from localStorage and convert them to numbers
+  var offsets = [
+    'afforestation', 'methaneCapture', 'renewableEnergy', 'soilCarbon',
+    'ccs', 'beccs', 'carbonCredits', 'enhancedWeathering', 'biochar',
+    'renewableDiesel', 'avoidedDeforestation', 'oceanAlkalinity', 'wetlandsPeatlands'
+  ].map(key => Number(localStorage.getItem(key)) || 0);
+
+  // Subtract all offsets from the total emission
+  totalEmission -= offsets.reduce((acc, val) => acc + val, 0);
+
+  // Optional: return or log the final total emission
+  console.log('Total Carbon Emission:', totalEmission);
+  return totalEmission;
+}
+
