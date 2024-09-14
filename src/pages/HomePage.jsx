@@ -13,13 +13,12 @@ import Footer from '../components/footer/footer';
 const HomePage = () => {
   return (
     <div>
-      <Navbar /> {/* Render the Navbar component with JSX */}
+      <Navbar /> Render the Navbar component with JSX
       <Hero /> {/* Render the Hero component with JSX */}
       <Menu />
       <Chatbot />
       <SignUpPage /> 
       <News />
-      <Footer />
       {/* <Button /> */}
       {/* <Hero3/> */}
       {/* Render the SignUpPage component with JSX */}
