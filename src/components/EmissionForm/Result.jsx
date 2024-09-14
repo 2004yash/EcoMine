@@ -1,6 +1,7 @@
 import { RiCheckDoubleFill } from "react-icons/ri";
 import { MdOutlineVerified } from "react-icons/md";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';  // Keep this from your branch
+import Footer from "../footer/footer";  // Keep this from main branch
 import "./Result.css";
 
 function Result() {
@@ -119,6 +120,7 @@ function Result() {
           </div>
         </div>
       </div>
+      <Footer />  {/* Include the Footer component */}
     </>
   );
 }
