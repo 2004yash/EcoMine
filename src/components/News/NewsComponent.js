@@ -8,7 +8,7 @@ const NewsComponent = () => {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    fetch(`${url}${API_KEY}&pageSize=4`)
+    fetch(`${url}${API_KEY}&pageSize=6`)
       .then(res => res.json())
       .then(data => setArticles(data.articles || []))
       .catch(err => console.error("Failed to fetch news:", err));

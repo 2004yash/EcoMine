@@ -2,7 +2,7 @@
   text-align: center;
   padding: 20px;
   background-color: black;
-  /* background-image: url("../../../public/p1.jpg"); */
+  
   width: 100%;
   margin-bottom: 10px; /* Reduced margin-bottom */
   display: block !important;
@@ -11,7 +11,7 @@
 .hero2 {
   margin-top: 5%; 
   background-color: black;
-  padding: 20px 0; /* Added padding for spacing */
+  padding: 20px 0; 
   text-align: center;
   display: block !important;
 }
@@ -95,4 +95,53 @@
     color: white;
     align-items: start;
   }
-  
+  /* Feature Cards Section */
+.feature-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.card {
+  background-color: #1e1e1e;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 15px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover Effect for the Cards */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #00bcd4; /* Added some contrast with a blue accent */
+}
+
+.card p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .feature-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+}

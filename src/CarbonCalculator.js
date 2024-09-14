@@ -51,6 +51,51 @@ export function CarbonEmissionFromElectricity(units) {
 function CarbonEmissionFromElectricEquip(load, amount, avgUse) {
   return load * amount * avgUse * 0.031;
 }
+function getCarbonMultiplier(activity) {
+  switch (activity) {
+    case "afforestation":
+return (2 + 4) / 2; // 2-4 metric tons CO2/hectare/year
+
+case "methaneCapture":
+  return (25 + 50) / 2; // 25-50 metric tons CO2e/cubic meter of methane captured/year
+
+case "renewableEnergy":
+  return (0.5 + 1) / 2; // 0.5-1 metric ton CO2/MWh
+
+case "soilCarbon":
+  return (0.2 + 1) / 2; // 0.2-1 metric ton CO2/hectare/year
+
+case "ccs":
+  return 0.9; // Up to 90% of facility CO2 emissions
+
+case "beccs":
+  return (1 + 2) / 2; // 1-2 metric tons CO2/MWh
+
+case "carbonCredits":
+  return 1; // 1 metric ton CO2 per credit
+
+case "enhancedWeathering":
+  return (0.5 + 1) / 2; // 0.5-1 metric ton CO2/ton of rock
+
+case "biochar":
+  return (0.5 + 1) / 2; // 0.5-1 metric ton CO2/ton of biochar
+
+case "renewableDiesel":
+  return (2.5 + 3.5) / 2; // 2.5-3.5 metric tons CO2e/1,000 gallons
+
+case "avoidedDeforestation":
+  return (100 + 200) / 2; // 100-200 metric tons CO2/hectare/year
+
+case "oceanAlkalinity":
+  return (0.5 + 1) / 2; // 0.5-1 metric ton CO2/ton of substance
+
+case "wetlandsPeatlands":
+  return (3 + 6) / 2; // 3-6 metric tons CO2/hectare/year
+
+default:
+  throw new Error("Unknown activity type");
+}
+}
 function totalCarbonEmission() {
   // Retrieve and shorten variable names for emissions
   var transElecEm = Number(localStorage.getItem("electricityEmissions")) || 0;
