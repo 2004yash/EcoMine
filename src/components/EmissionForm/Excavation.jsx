@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Nav from './Nav';
 import Dropdown from './Dropdown';
-import './Excavation.module.css';
+// import './Excavation.module.css';
+import styles from './Excavation.module.css';
+
 import Input from './Input';
 import { useNavigate } from "react-router-dom";
 import { CarbonEmissionFromFuel, CarbonEmissionFromElectricity } from "../../CarbonCalculator";
+import Explosive from './Explosive';
 const Excavation = () => {
   const navigate = useNavigate();
 
@@ -45,6 +48,8 @@ const Excavation = () => {
     <>
       <Nav />
       <div className="box">
+      <div className="overr12" style={{ height: "70%", overflowY: "auto" , overflowX: "hidden"}}>
+
         <div className="fueli">
           <div className="headingF">
             <h3>1. Fuel consumption per month</h3>
@@ -52,15 +57,16 @@ const Excavation = () => {
           <div className="inputF">
             <Dropdown value={selectedFuelInExcavation} onChange={handleDropdownChange} />
             <Input
-              placeholder="Units[kg]"
+              title="Units[kg]"
               value={inputValues.fuelUnits}
               onChange={handleInputChange('fuelUnits')}
             />
             <Input
-              placeholder="Emission[kgCO2]"
+              title="Emission[kgCO2]"
               value={inputValues.fuelEmission} readonly
             // onChange={handleInputChange('fuelEmission')}
             />
+            
           </div>
         </div>
         <div className="electri">
@@ -69,20 +75,43 @@ const Excavation = () => {
           </div>
           <div className="inputE">
             <Input
-              placeholder="Total Consumption Units[kg]"
+              title="Total Consumption Units[kg]"
               value={inputValues.electricityUnits}
               onChange={handleInputChange('electricityUnits')}
             />
             <Input
-              placeholder="Emission[kgCO2]"
+              title="Emission[kgCO2]"
               value={inputValues.electricityEmission} readonly
             // onChange={handleInputChange('electricityEmission')}
             />
           </div>
         </div>
+        <Explosive/>
+        </div>
+        
+
+        {/* <div className="electri">
+          <div className="headingE">
+            <h3>3. Dynamite used</h3>
+          </div>
+          <div className="inputE">
+            <Input
+              title="Total Consumption Units[kg]"
+              value={inputValues.electricityUnits}
+              onChange={handleInputChange('electricityUnits')}
+            />
+            <Input
+              title="Emission[kgCO2]"
+              value={inputValues.electricityEmission} readonly
+            // onChange={handleInputChange('electricityEmission')}
+            />
+          </div>
+        </div> */}
+
+      
 
         <div className="footer">
-          <button onClick={() => navigate("/carbonform/transportation")} className='btn5'>Next</button>
+          <button onClick={() => navigate("/carbonform/transportation")} className={styles.btn5} >Next</button>
         </div>
       </div>
     </>

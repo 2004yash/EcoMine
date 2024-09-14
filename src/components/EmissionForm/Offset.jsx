@@ -5,6 +5,7 @@ import Input from './Input';
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast,Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // Import the CSS
+import {totalCarbonEmission} from "../../CarbonCalculator";
 
 const Excavation = () => {
   const navigate = useNavigate();
@@ -37,9 +38,12 @@ const Excavation = () => {
   const handleInputChange = (field) => (e) => {
     setInputValues({ ...inputValues, [field]: e.target.value });
   };
+ 
 
   // Handler to show toast and navigate
   const handleClick = () => {
+    const finalResult = totalCarbonEmission();
+    localStorage.clear()
     toast.success('Loading results...', {
       position: "bottom-center",
       autoClose: 1995,
@@ -51,7 +55,7 @@ const Excavation = () => {
       transition: Bounce,
       });
     setTimeout(() => {
-      navigate('/result');
+      navigate('/result', { state: { result: finalResult } });
     }, 2000);
   };
 
@@ -66,19 +70,23 @@ const Excavation = () => {
             </div>
             <div className="inputE">
               <Input
-                placeholder="Afforestation/Reforestation"
+                title="Afforestation/Reforestation"
                 value={inputValues.afforestation}
                 onChange={handleInputChange('afforestation')}
+                units="hectare"
               />
+            
               <Input
-                placeholder="Methane Capture"
+                title="Methane Capture"
                 value={inputValues.methaneCapture}
                 onChange={handleInputChange('methaneCapture')}
+                units="cc"
               />
               <Input
-                placeholder="Renewable Energy"
+                title="Renewable Energy"
                 value={inputValues.renewableEnergy}
                 onChange={handleInputChange('renewableEnergy')}
+                units="MWh"
               />
             </div>
           </div>
@@ -88,19 +96,22 @@ const Excavation = () => {
             </div>
             <div className="inputE">
               <Input
-                placeholder="Soil Carbon Sequestration"
+                title="Soil Carbon Sequestration"
                 value={inputValues.soilCarbon}
                 onChange={handleInputChange('soilCarbon')}
+                units="hectare"
               />
               <Input
-                placeholder="CCS"
+                title="CCS"
                 value={inputValues.ccs}
                 onChange={handleInputChange('ccs')}
+                units="metric tons"
               />
               <Input
-                placeholder="BECCS"
+                title="BECCS"
                 value={inputValues.beccs}
                 onChange={handleInputChange('beccs')}
+                units="MWh"
               />
             </div>
           </div>
@@ -110,19 +121,22 @@ const Excavation = () => {
             </div>
             <div className="inputE">
               <Input
-                placeholder="Carbon Credits"
+                title="Carbon Credits"
                 value={inputValues.carbonCredits}
                 onChange={handleInputChange('carbonCredits')}
+                units="metric tons"
               />
               <Input
-                placeholder="Enhanced Weathering"
+                title="Enhanced Weathering"
                 value={inputValues.enhancedWeathering}
                 onChange={handleInputChange('enhancedWeathering')}
+                units="metric tons"
               />
               <Input
-                placeholder="Biochar"
+                title="Biochar"
                 value={inputValues.biochar}
                 onChange={handleInputChange('biochar')}
+                units="metric tons"
               />
             </div>
           </div>
@@ -132,19 +146,22 @@ const Excavation = () => {
             </div>
             <div className="inputE">
               <Input
-                placeholder="Renewable Diesel"
+                title="Renewable Diesel"
                 value={inputValues.renewableDiesel}
                 onChange={handleInputChange('renewableDiesel')}
+                units="metric tons"
               />
               <Input
-                placeholder="Avoided Deforestation"
+                title="Avoided Deforestation"
                 value={inputValues.avoidedDeforestation}
                 onChange={handleInputChange('avoidedDeforestation')}
+                units="hectare"
               />
               <Input
-                placeholder="Ocean Alkalinity"
+                title="Ocean Alkalinity"
                 value={inputValues.oceanAlkalinity}
                 onChange={handleInputChange('oceanAlkalinity')}
+                units="hectare"
               />
             </div>
           </div>
@@ -154,16 +171,17 @@ const Excavation = () => {
             </div>
             <div className="inputE">
               <Input
-                placeholder="Wetlands/Peatlands"
+                title="Wetlands/Peatlands"
                 value={inputValues.wetlandsPeatlands}
                 onChange={handleInputChange('wetlandsPeatlands')}
+                units="hectare"
               />
             </div>
           </div>
         </div>
         <div className="footer">
           
-          <button onClick={handleClick} className='btn4'>RESULT</button>
+          <button onClick={handleClick} className='btn4' >RESULT</button>
           <button onClick={() => navigate(-1)} className='btn'>Prev</button>
         </div>
       </div>

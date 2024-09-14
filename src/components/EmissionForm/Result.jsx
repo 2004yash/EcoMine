@@ -1,8 +1,12 @@
 import { RiCheckDoubleFill } from "react-icons/ri";
 import { MdOutlineVerified } from "react-icons/md";
+import { useLocation } from 'react-router-dom';
 import "./Result.css";
 
 function Result() {
+  const location = useLocation();
+  const { result } = location.state || {}; // Access the result from state
+
   return (
     <>
       <div className="resultt">
@@ -10,11 +14,11 @@ function Result() {
           <div className="left">
             <div className="textt">
               <h1>Congratulations!</h1>
-              <p> You have completed all the calculator sections.</p>
+              <p>You have completed all the calculator sections.</p>
             </div>
             <div className="totall">
               <h1>Your current total</h1>
-              <p>"XYZ"</p>
+              <p>{result ? result : "Not available"}</p> {/* Display the result */}
             </div>
 
             <div>
@@ -111,14 +115,10 @@ function Result() {
                 </ul>
                 <button type="button" className="buybtnn">Buy Now</button>
               </div>
-              
             </div>
-            
-
           </div>
         </div>
       </div>
-     
     </>
   );
 }

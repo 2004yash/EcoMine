@@ -1,12 +1,12 @@
-body, html {
+/* body, html {
     margin-top: 50px;
     padding: 0;
     font-family: Arial, sans-serif;
     height: 100vh;
     box-sizing: border-box;
-    background-color: #000; /* Black background */
-    color: #fff; /* Default text color */
-}
+    background-color: #000; 
+    color: #fff; 
+} */
 
 .unique-dashboard-header {
     background-color: rgb(80, 78, 78);

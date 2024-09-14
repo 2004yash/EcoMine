@@ -40,5 +40,6 @@ background-color: black;
   background-repeat: no-repeat;
   color: white;
   scale: 0.8;
+  /* overflow-y: auto; */
   
 }

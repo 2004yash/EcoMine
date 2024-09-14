@@ -54,12 +54,12 @@ const Excavation = () => {
           <div className="inputF">
             <Dropdown value={selectedFuel} onChange={handleDropdownChange} />
             <Input
-              placeholder="Units[kg]"
+              title="Units[kg]"
               value={inputValues.fuelUnit}
               onChange={handleInputChange('fuelUnit')}
             />
             <Input
-              placeholder="Emission[kgCO2]"
+              title="Emission[kgCO2]"
               value={inputValues.fuelEmissions} readonly
               // onChange={handleInputChange('fuelEmissions')}
             />
@@ -71,12 +71,12 @@ const Excavation = () => {
           </div>
           <div className="inputE">
             <Input
-              placeholder="Total Consumption Units[kg]"
+              title="Total Consumption Units[kg]"
               value={inputValues.electricityUnit}
               onChange={handleInputChange('electricityUnit')}
             />
             <Input
-              placeholder="Emission[kgCO2]"
+              title="Emission[kgCO2]"
               value={inputValues.electricityEmissions} readonly
               // onChange={handleInputChange('electricityEmissions')}
             />

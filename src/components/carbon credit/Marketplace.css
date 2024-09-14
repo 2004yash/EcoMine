@@ -1,5 +1,5 @@
 /* Base styles */
-body, html {
+/* body, html {
   font-family: 'Arial', sans-serif;
   margin-top: 20px;
   padding: 0;
@@ -7,7 +7,7 @@ body, html {
   color: #f5f6fa;
   height: 100%;
   box-sizing: border-box;
-}
+} */
 
 /* Container for the Marketplace */
 .marketplace {
