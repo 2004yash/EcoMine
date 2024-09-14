@@ -83,7 +83,7 @@ const Excavation = () => {
           </div>
         </div>
 
-        <div className="footer">
+        <div className="footerr">
           <button onClick={() => navigate("/carbonform/equipment")}className='btn4'>Next</button>
           <button onClick={() => navigate(-1)} className='btn'>Prev</button>
         </div>

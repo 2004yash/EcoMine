@@ -179,7 +179,7 @@ const Excavation = () => {
             </div>
           </div>
         </div>
-        <div className="footer">
+        <div className="footerr">
           
           <button onClick={handleClick} className='btn4' >RESULT</button>
           <button onClick={() => navigate(-1)} className='btn'>Prev</button>

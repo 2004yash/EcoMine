@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../components/navbar/navbar'; 
 import Hero from '../components/hero/hero'; 
-import NewsComponent from '../components/News/NewsComponent'; 
+import News from '../components/News/NewsComponent'; 
 // import Button from '../components/button/button'; 
 // import Hero3 from '../components/hero2/hero3';
 import Chatbot from '../components/Chatbot/ChatbotComponent'
@@ -18,14 +18,8 @@ const HomePage = () => {
       <Menu />
       <Chatbot />
       <SignUpPage /> 
-     < HEAD/>
-      <NewsComponent />
-      <Chatbot />
-      
-
       <News />
       <Footer />
-
       {/* <Button /> */}
       {/* <Hero3/> */}
       {/* Render the SignUpPage component with JSX */}

@@ -110,7 +110,7 @@ const Excavation = () => {
 
       
 
-        <div className="footer">
+        <div className="footerr">
           <button onClick={() => navigate("/carbonform/transportation")} className={styles.btn5} >Next</button>
         </div>
       </div>
