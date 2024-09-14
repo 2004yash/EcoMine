@@ -1,6 +1,7 @@
-import "./Explosive.css";
 import React, { useState, useEffect } from "react";
+import styles from "./Explosive.module.css"; // Import the CSS module
 import ExplosiveDropdown from "./ExplosiveDropdown ";
+import { ImBin2 } from "react-icons/im";
 
 const Explosive = ({ text = "" }) => {
   const defaultExplosive = {
@@ -14,31 +15,25 @@ const Explosive = ({ text = "" }) => {
       JSON.parse(localStorage.getItem("explosiveList")) || [defaultExplosive]
   );
 
-  // Function to calculate emissions for a single explosive object
   const calculateEmissions = (explosive) => {
-    const emissionFactor = explosive.explosiveType === "ANFO" ? 0.25 : 0.50; // Example emission factors
-    const calculatedEmissions =
-      explosive.numberOfExplosives * emissionFactor;
+    const emissionFactor = explosive.explosiveType === "ANFO" ? 0.25 : 0.50;
+    const calculatedEmissions = explosive.numberOfExplosives * emissionFactor;
     return calculatedEmissions.toFixed(2);
   };
 
-  // Effect to update localStorage whenever the explosive list changes
   useEffect(() => {
     localStorage.setItem("explosiveList", JSON.stringify(explosiveList));
   }, [explosiveList]);
 
-  // Handler to add new explosive
   const handleAddExplosive = () => {
     setExplosiveList([...explosiveList, defaultExplosive]);
   };
 
-  // Handler to delete explosive
   const handleDeleteExplosive = (index) => {
     const updatedList = explosiveList.filter((_, i) => i !== index);
     setExplosiveList(updatedList);
   };
 
-  // Handlers to update individual explosives
   const handleUpdateExplosive = (index, field, value) => {
     const updatedList = [...explosiveList];
     updatedList[index] = {
@@ -51,17 +46,15 @@ const Explosive = ({ text = "" }) => {
 
   return (
     <>
-      <div className="headExpo">
+      <div className={styles.headExpo}>
         <h3>3. Explosive Details</h3>
       </div>
       <div>
-        {/* Loop to render each explosive */}
         {explosiveList.map((explosive, index) => (
-          <div key={index} className="outer-container">
-            <div className="text-above">{text}</div>
+          <div key={index} className={styles["outer-container"]}>
+            <div className={styles["text-above"]}>{text}</div>
 
-            <div className="form-section">
-              {/* Dropdown for Explosive Type */}
+            <div className={styles["tnt"]}>
               <ExplosiveDropdown
                 value={explosive.explosiveType}
                 onChange={(e) =>
@@ -69,9 +62,9 @@ const Explosive = ({ text = "" }) => {
                 }
               />
 
-              <div className="input-group">
-                <label>No.of Explosives used      </label>
-                <input
+              <div className={styles["input-group"]}>
+                <label>No. of Explosives used</label>
+                <input className={styles.ip}
                   type="number"
                   value={explosive.numberOfExplosives}
                   onChange={(e) =>
@@ -84,24 +77,26 @@ const Explosive = ({ text = "" }) => {
                 />
               </div>
 
-              <div className="input-group">
+              <div className={styles["input-group"]}>
                 <label>Emissions (Kg CO2)</label>
-                <input type="text" value={explosive.emissions} readOnly />
+                <input className={styles.ip} type="text" value={explosive.emissions} readOnly />
               </div>
+             
 
-              {/* Delete Explosive Button */}
               <button
                 onClick={() => handleDeleteExplosive(index)}
-                className="btn-delete-explosive"
-              >
-                Delete Explosive
+                className={styles["btn-delete-explosive"]}
+              >  <ImBin2   style={{
+                color: "white",
+                alignItems: "center",
+                fontSize: "150%",
+              }}/>
               </button>
             </div>
           </div>
         ))}
 
-        {/* Add Explosive Button */}
-        <button onClick={handleAddExplosive} className="btn-add-explosive">
+        <button onClick={handleAddExplosive} className={styles["btn-add-explosive"]}>
           Add Explosive +
         </button>
       </div>
