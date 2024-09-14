@@ -3,6 +3,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase'; // Import your Firebase configuration
 import './dashboard.css';
+// import dashboard from './dashboard.module.css';
 
 const Dashboard = () => {
   const [uniqueCompanyName, setUniqueCompanyName] = useState('');

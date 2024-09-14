@@ -15,7 +15,8 @@ const NewsComponent = () => {
   }, []);
 
   return (
-    <div>
+    <div className='newswa'>
+    
       <h1>Carbon Footprint & Coal Waste News</h1>
       <div className="news-container">
         {articles.map((article, index) => (

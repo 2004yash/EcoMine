@@ -20,7 +20,7 @@ background-color: black;
   /* margin-top: 2vh; */
   margin-bottom: 9vh;
   position: relative;
-  top:3vh;
+  top:12vh;
   background-color: white;
   color: black;
 }
@@ -40,5 +40,6 @@ background-color: black;
   background-repeat: no-repeat;
   color: white;
   scale: 0.8;
+  /* overflow-y: auto; */
   
 }
