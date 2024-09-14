@@ -8,16 +8,18 @@ import { useNavigate, useLocation } from 'react-router-dom'; // Import useNaviga
 const Dashboard = () => {
   const [uniqueCompanyName, setUniqueCompanyName] = useState('');
   const [uniqueEmail, setUniqueEmail] = useState('');
+  const [uid, setUid] = useState('');
   const navigate = useNavigate();
   const location = useLocation();
   
-  const uid = location.state?.uid; // Get UID passed from login
+  const fallbackUid = location.state?.uid; // Get UID passed from login
 
   useEffect(() => {
     const auth = getAuth();
-    const fetchUniqueData = async (uid) => {
+
+    const fetchUniqueData = async (userUid) => {
       try {
-        const docRef = doc(db, 'users', uid);
+        const docRef = doc(db, 'users', userUid);
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
@@ -33,13 +35,15 @@ const Dashboard = () => {
     };
 
     onAuthStateChanged(auth, (user) => {
-      if (user || uid) {
-        fetchUniqueData(user ? user.uid : uid);
+      const currentUid = user ? user.uid : fallbackUid;
+      if (currentUid) {
+        setUid(currentUid);
+        fetchUniqueData(currentUid);
       } else {
         console.log('No user is logged in');
       }
     });
-  }, [uid]);
+  }, [fallbackUid]);
 
   // Navigate to Marketplace and pass user info
   const goToMarketplace = () => {
