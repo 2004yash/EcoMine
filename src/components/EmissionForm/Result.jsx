@@ -1,5 +1,6 @@
 import { RiCheckDoubleFill } from "react-icons/ri";
 import { MdOutlineVerified } from "react-icons/md";
+import Footer from "../footer/footer";
 import "./Result.css";
 
 function Result() {
@@ -118,7 +119,7 @@ function Result() {
           </div>
         </div>
       </div>
-     
+     <Footer />
     </>
   );
 }

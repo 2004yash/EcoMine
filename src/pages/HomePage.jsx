@@ -7,7 +7,7 @@ import NewsComponent from '../components/News/NewsComponent';
 import Chatbot from '../components/Chatbot/ChatbotComponent'
 import SignUpPage from '../components/sign/sign'; // Updated import
 import Menu from '../components/menu/menu'
-
+import Footer from '../components/footer/footer';
 
 
 const HomePage = () => {
@@ -16,10 +16,10 @@ const HomePage = () => {
       <Navbar /> {/* Render the Navbar component with JSX */}
       <Hero /> {/* Render the Hero component with JSX */}
       <Menu />
-      <SignUpPage /> 
-      <NewsComponent />
       <Chatbot />
-      
+      <SignUpPage /> 
+      <News />
+      <Footer />
       {/* <Button /> */}
       {/* <Hero3/> */}
       {/* Render the SignUpPage component with JSX */}

@@ -3,7 +3,7 @@
     display: flex;
     align-items: flex-start; /* Aligns content to the top of the section */
     height: 89vh !important;
-    
+    margin-top: 35px;
     width: 100%;
 
     background-position: center; /* Center the image */
