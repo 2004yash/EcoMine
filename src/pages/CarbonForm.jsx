@@ -1,3 +1,4 @@
+import Navbar from "../components/navbar/navbar";
 import "./CarbonForm.css";
 import Excavation from "../components/EmissionForm/Excavation";
 import Transportation from "../components/EmissionForm/Transportation";
@@ -10,6 +11,7 @@ import { Route, Routes,Navigate } from "react-router-dom";
 function CarbonForm() {
   return (
     <div className="frame">
+      <Navbar />
       <h1>Welcome to the carbon footprint calculator</h1>
       <div className="form">
         <div className="DisplayForm">

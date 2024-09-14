@@ -16,9 +16,9 @@ const HomePage = () => {
       <Navbar /> {/* Render the Navbar component with JSX */}
       <Hero /> {/* Render the Hero component with JSX */}
       <Menu />
+      <Chatbot />
       <SignUpPage /> 
       <News />
-      <Chatbot />
       <Footer />
       {/* <Button /> */}
       {/* <Hero3/> */}

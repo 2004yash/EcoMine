@@ -3,7 +3,7 @@ import { buildTheme } from "@botpress/webchat-generator";
 import { useState, useEffect } from "react";
 
 const { theme, style } = buildTheme({
-  themeName: "galaxy",
+  themeName: "midnight",
   themeColor: "#634433",
 });
 
@@ -22,11 +22,11 @@ const ChatbotComponent = () => {
 
 
   useEffect(() => {
-    setChatKey(Date.now()); // Update key on component mount (e.g., page refresh)
+    setChatKey(Date.now()); 
   }, []);
 
   return (
-    <div style={{ width: "100vw", height: "100vh", position: "relative" }}>
+    <div style={{ width: "0vw", height: "0vh", position: "relative" }}>
       <style>{style}</style>
       <WebchatProvider theme={theme} client={client}>
         <Fab
