@@ -8,10 +8,19 @@ body, html {
     color: #fff; 
     box-sizing: border-box;
 }
+.unique-box unique-box6{
+    border: 1px solid #ccc;
+}
 
 /* Padding for the header section */
 .IamYash {
     padding-top: 15vh;
+}
+.unique-img-graph{
+    width:90% !important;
+    height:80%;
+    margin-top: 20% !important;
+
 }
 
 /* Header section styling */
@@ -65,7 +74,9 @@ body, html {
     height: calc(100vh - 120px); /* Full height minus header height */
 }
 .co2{
-    f
+    font-size: 2.5rem;
+    margin-left: 8%;
+    margin-bottom: 5%;
 }
 /* Individual dashboard boxes */
 .unique-box {
@@ -104,7 +115,7 @@ body, html {
 }
 
 .unique-box6 {
-    border: 2px solid blue;
+    border: 2px solid goldenrod;
 }
 
 /* Headers inside the boxes */
@@ -142,7 +153,34 @@ body, html {
     border-radius: 5px; /* Add rounded corners */
     color: white;
 }
-
+.unique-b3{
+    background-color: red !important;
+}
+.unique-b4{
+    background-color:blue !important;
+}
+.unique-b6{
+    background-color: goldenrod !important;}
+.unique-b1{
+    margin-right: 20%;
+    margin-bottom: 7%;
+}
+.unique-b2{
+    
+        margin-right: 20%;
+        
+    
+}
+.unique-s1{
+    /* ont-size: 3.5rem; */
+    margin-left: 8%;
+    margin-bottom: 5%;
+}
+.unique-s2{
+    /* font-size: 5.5rem; */
+   
+    margin-bottom: 11%;
+}
 /* Button-specific styles */
 .unique-b1 {
     background-color: darkgoldenrod;
@@ -161,7 +199,7 @@ body, html {
 
 /* Slogan and text styling */
 .unique-s1, .unique-s2 {
-    font-size: 2rem;
+    font-size: 2.8rem;
     font-style: oblique;
     font-weight: 900;
     text-align: center;
@@ -176,7 +214,7 @@ body, html {
     margin: 0 auto; /* Center images */
 }
 
-.unique-img img, .unique-img-graph img {
+.unique-img img, img {
     width: 100%;
     height: auto;
 }
