@@ -52,7 +52,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div>
+    <div className='IamYash'>
       <header className="unique-dashboard-header">
         <h1>Carbon Footprint Dashboard</h1>
       </header>
