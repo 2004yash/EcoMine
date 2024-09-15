@@ -75,7 +75,7 @@ const Excavation = () => {
           </div>
           <div className="inputE">
             <Input
-              title="Total Consumption Units[kg]"
+              title="Total Consumption [KWh]"
               value={inputValues.electricityUnits}
               onChange={handleInputChange('electricityUnits')}
             />
@@ -90,24 +90,7 @@ const Excavation = () => {
         </div>
         
 
-        {/* <div className="electri">
-          <div className="headingE">
-            <h3>3. Dynamite used</h3>
-          </div>
-          <div className="inputE">
-            <Input
-              title="Total Consumption Units[kg]"
-              value={inputValues.electricityUnits}
-              onChange={handleInputChange('electricityUnits')}
-            />
-            <Input
-              title="Emission[kgCO2]"
-              value={inputValues.electricityEmission} readonly
-            // onChange={handleInputChange('electricityEmission')}
-            />
-          </div>
-        </div> */}
-
+        
       
 
         <div className="footerr">
