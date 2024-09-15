@@ -68,7 +68,7 @@ const Excavation = () => {
             <div className="headingE">
               {/* Add heading if needed */}
             </div>
-            <div className="inputE">
+            <div className="inputo">
               <Input
                 title="Afforestation/Reforestation"
                 value={inputValues.afforestation}

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Explosive.module.css"; // Import the CSS module
+// import ExplosiveDropdown from "./ExplosiveDropdown";
 import ExplosiveDropdown from "./ExplosiveDropdown ";
 import { ImBin2 } from "react-icons/im";
+import { getEmissionFactor } from "../../CarbonCalculator";
 
 const Explosive = ({ text = "" }) => {
   const defaultExplosive = {
@@ -11,12 +13,14 @@ const Explosive = ({ text = "" }) => {
   };
 
   const [explosiveList, setExplosiveList] = useState(
-    () =>
-      JSON.parse(localStorage.getItem("explosiveList")) || [defaultExplosive]
+    () => JSON.parse(localStorage.getItem("explosiveList")) || [defaultExplosive]
   );
 
   const calculateEmissions = (explosive) => {
-    const emissionFactor = explosive.explosiveType === "ANFO" ? 0.25 : 0.50;
+    let emissionFactor = 1;
+    emissionFactor = getEmissionFactor(explosive.explosiveType)
+    if (explosive.explosiveType === "Black Powder") emissionFactor = 2;
+    console.log("Calculating emissions for:", explosive); // Debugging line
     const calculatedEmissions = explosive.numberOfExplosives * emissionFactor;
     return calculatedEmissions.toFixed(2);
   };
@@ -35,6 +39,7 @@ const Explosive = ({ text = "" }) => {
   };
 
   const handleUpdateExplosive = (index, field, value) => {
+    console.log(`Updating explosive ${index} field ${field} to ${value}`); // Debugging line
     const updatedList = [...explosiveList];
     updatedList[index] = {
       ...updatedList[index],
@@ -64,7 +69,8 @@ const Explosive = ({ text = "" }) => {
 
               <div className={styles["input-group"]}>
                 <label>No. of Explosives used</label>
-                <input className={styles.ip}
+                <input
+                  className={styles.ip}
                   type="number"
                   value={explosive.numberOfExplosives}
                   onChange={(e) =>
@@ -81,16 +87,12 @@ const Explosive = ({ text = "" }) => {
                 <label>Emissions (Kg CO2)</label>
                 <input className={styles.ip} type="text" value={explosive.emissions} readOnly />
               </div>
-             
 
               <button
                 onClick={() => handleDeleteExplosive(index)}
                 className={styles["btn-delete-explosive"]}
-              >  <ImBin2   style={{
-                color: "white",
-                alignItems: "center",
-                fontSize: "150%",
-              }}/>
+              >
+                <ImBin2 style={{ color: "white", alignItems: "center", fontSize: "150%" }} />
               </button>
             </div>
           </div>
