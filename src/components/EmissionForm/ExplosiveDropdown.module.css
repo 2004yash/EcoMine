@@ -27,7 +27,7 @@ form {
     border-radius: 5px;
     border: none;  
 } */
-.expodrop{
+/* .expodrop{
     width: 60%;
     height: 55%;
     padding: 8px;
@@ -36,7 +36,7 @@ form {
     border: none; 
     margin-top: 3.5%;
     margin-left: 16%;
-}
+} */
 /* button {
     padding: 10px 20px;
     background-color: #28a745;
@@ -49,6 +49,9 @@ form {
 /* button:hover {
     background-color: #218838;
 } */
-.expodrop{
+/* .expodrop{
     padding: 2%;
-}
+} */
+ /* #explosiveType{
+    background-color: aqua;
+ } */

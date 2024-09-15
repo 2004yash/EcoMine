@@ -6,7 +6,7 @@ const ExplosiveDropdown = ({ value, onChange }) => {
 
   return (
     <div>
-      <label htmlFor="explosiveType" className={styles.label}>Explosive Type*</label>
+      <label htmlFor="explosiveType" className={styles.expolabel}>Explosive Type*</label>
       <select
         id="explosiveType"
         className={styles.expodrop}  // Apply the CSS module class
