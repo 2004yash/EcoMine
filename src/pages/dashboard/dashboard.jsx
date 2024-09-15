@@ -4,6 +4,7 @@ import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase'; // Import your Firebase configuration
 import './dashboard.css';
 import { useNavigate, useLocation } from 'react-router-dom'; // Import useNavigate and useLocation
+// import dashboard from './dashboard.module.css';
 
 const Dashboard = () => {
   const [uniqueCompanyName, setUniqueCompanyName] = useState('');

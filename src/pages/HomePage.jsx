@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../components/navbar/navbar'; 
 import Hero from '../components/hero/hero'; 
-import NewsComponent from '../components/News/NewsComponent'; 
+import News from '../components/News/NewsComponent'; 
 // import Button from '../components/button/button'; 
 // import Hero3 from '../components/hero2/hero3';
 import Chatbot from '../components/Chatbot/ChatbotComponent'

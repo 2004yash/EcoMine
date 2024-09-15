@@ -1,120 +1,120 @@
 /* Base styles */
-body, html {
-    font-family: 'Arial', sans-serif;
-    margin-top: 20px;
-    padding: 0;
-    background-color: #1e272e;
-    color: #f5f6fa;
-    height: 100%;
-    box-sizing: border-box;
-  }
-  
-  /* Container for the Marketplace */
-  .marketplace {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  /* Title Styling */
-  .marketplace h1 {
-    font-size: 2.5rem;
-    color: #f5f6fa;
-    margin-bottom: 30px;
-    letter-spacing: 1px;
-  }
-  
-  /* Input Box */
+/* body, html {
+  font-family: 'Arial', sans-serif;
+  margin-top: 20px;
+  padding: 0;
+  background-color: #1e272e;
+  color: #f5f6fa;
+  height: 100%;
+  box-sizing: border-box;
+} */
+
+/* Container for the Marketplace */
+.marketplace {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Title Styling */
+.marketplace h1 {
+  font-size: 2.5rem;
+  color: #f5f6fa;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+/* Input Box */
+.buyer-input {
+  width: 50%;
+  padding: 12px;
+  font-size: 1.1rem;
+  border: 2px solid #34495e;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  outline: none;
+  background-color: #2f3640;
+  color: #f5f6fa;
+  transition: border-color 0.3s ease;
+}
+
+.buyer-input:focus {
+  border-color: #00a8ff;
+}
+
+/* Credits List Container */
+.credits-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Credit Card */
+.credit-card {
+  background-color: #2f3640;
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  border: 1px solid #34495e;
+}
+
+.credit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Heading */
+.credit-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #00a8ff;
+}
+
+/* Card Description */
+.credit-card p {
+  font-size: 1rem;
+  color: #dcdde1;
+  margin-bottom: 20px;
+}
+
+/* Buy Button */
+.credit-card button {
+  background-color: #00a8ff;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.credit-card button:hover {
+  background-color: #0097e6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   .buyer-input {
-    width: 50%;
-    padding: 12px;
-    font-size: 1.1rem;
-    border: 2px solid #34495e;
-    border-radius: 8px;
-    margin-bottom: 40px;
-    outline: none;
-    background-color: #2f3640;
-    color: #f5f6fa;
-    transition: border-color 0.3s ease;
+    width: 80%;
   }
-  
-  .buyer-input:focus {
-    border-color: #00a8ff;
-  }
-  
-  /* Credits List Container */
-  .credits-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  /* Credit Card */
+
   .credit-card {
-    background-color: #2f3640;
-    border-radius: 12px;
-    padding: 20px;
-    width: 280px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    border: 1px solid #34495e;
+    width: calc(50% - 20px);
   }
-  
-  .credit-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Card Heading */
-  .credit-card h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #00a8ff;
-  }
-  
-  /* Card Description */
-  .credit-card p {
-    font-size: 1rem;
-    color: #dcdde1;
-    margin-bottom: 20px;
-  }
-  
-  /* Buy Button */
-  .credit-card button {
-    background-color: #00a8ff;
-    color: #fff;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
+}
+
+@media (max-width: 480px) {
+  .credit-card {
     width: 100%;
-    transition: background-color 0.3s ease;
   }
-  
-  .credit-card button:hover {
-    background-color: #0097e6;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .buyer-input {
-      width: 80%;
-    }
-  
-    .credit-card {
-      width: calc(50% - 20px);
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .credit-card {
-      width: 100%
-    }
-  }
+}
