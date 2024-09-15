@@ -30,7 +30,7 @@ const LoginWindow = ({ onClose }) => {
         const user = userCredential.user;
         console.log('Logged in:', user);
         onClose(); // Close the login window after successful login
-        navigate('/dashboard'); // Navigate to /dashboard after successful login
+        navigate('/dashboard', { state: { uid: user.uid } }); // Pass UID to dashboard
       })
       .catch((error) => {
         console.error('Login failed:', error);
