@@ -71,7 +71,7 @@ const Excavation = () => {
           </div>
           <div className="inputE">
             <Input
-              title="Total Consumption Units[kg]"
+              title="Total Consumption [KWh]"
               value={inputValues.electricityUnit}
               onChange={handleInputChange('electricityUnit')}
             />
