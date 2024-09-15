@@ -3,17 +3,24 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase'; // Import your Firebase configuration
 import './dashboard.css';
+import { useNavigate, useLocation } from 'react-router-dom'; // Import useNavigate and useLocation
 // import dashboard from './dashboard.module.css';
 
 const Dashboard = () => {
   const [uniqueCompanyName, setUniqueCompanyName] = useState('');
   const [uniqueEmail, setUniqueEmail] = useState('');
+  const [uid, setUid] = useState('');
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  const fallbackUid = location.state?.uid; // Get UID passed from login
 
   useEffect(() => {
     const auth = getAuth();
-    const fetchUniqueData = async (uid) => {
+
+    const fetchUniqueData = async (userUid) => {
       try {
-        const docRef = doc(db, 'users', uid);
+        const docRef = doc(db, 'users', userUid);
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
@@ -29,16 +36,23 @@ const Dashboard = () => {
     };
 
     onAuthStateChanged(auth, (user) => {
-      if (user) {
-        fetchUniqueData(user.uid);
+      const currentUid = user ? user.uid : fallbackUid;
+      if (currentUid) {
+        setUid(currentUid);
+        fetchUniqueData(currentUid);
       } else {
         console.log('No user is logged in');
       }
     });
-  }, []);
+  }, [fallbackUid]);
+
+  // Navigate to Marketplace and pass user info
+  const goToMarketplace = () => {
+    navigate('/marketplace', { state: { uid, companyName: uniqueCompanyName, email: uniqueEmail } });
+  };
 
   return (
-    <div>
+    <div className='IamYash'>
       <header className="unique-dashboard-header">
         <h1>Carbon Footprint Dashboard</h1>
       </header>
@@ -73,11 +87,11 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="unique-box unique-box4">
-          <div className="unique-h4"><h1>Carbon Credits</h1></div>
-          <span>Guidance and <br />Support from <br />Leading<br /> Mentors</span>
+          <div className="unique-h4"><h1>Marketplace</h1></div>
+          <span>Buy and Sell Carbon Credits<br />Easily in the Marketplace</span>
           <div className="unique-bo4">
-            <div className="unique-b4"><h>Click here</h></div>
-            <div className="unique-img"><img src={`${process.env.PUBLIC_URL}/cc.png`} alt="cc" /></div>
+            <button className="unique-b4" onClick={goToMarketplace}><h>Go to Marketplace</h></button>
+            <div className="unique-img"><img src={`${process.env.PUBLIC_URL}/marketplace.png`} alt="marketplace" /></div>
           </div>
         </div>
         <div className="unique-box unique-box5">
@@ -88,7 +102,7 @@ const Dashboard = () => {
         </div>
         <div className="unique-box unique-box6">
           <div className="unique-h6"><h1>Mentor Connect</h1></div>
-          <span>Guidance and <br />Support from <br />Leading <br />Mentors</span>
+          <span>Guidance and <br />Support from <br />Leading Mentors</span>
           <div className="unique-bo6">
             <div className="unique-b6"><h>Connect</h></div>
             <div className="unique-img"><img src={`${process.env.PUBLIC_URL}/connect.jpg`} alt="connect" /></div>
