@@ -42,6 +42,9 @@
    
 
 }
+nav li a{
+    color:white;
+}
 .btn4{
     position: relative;
     background-color:green;
@@ -63,6 +66,8 @@
     left: -7.9vw;
     top: 2.5vw;
     padding: 1%;
+    margin-bottom: 6% !important;
+    align-items: flex-start;
     width: 15%;
     
 }

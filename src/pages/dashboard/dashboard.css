@@ -1,23 +1,25 @@
-/* body, html {
-    margin-top: 50px;
+/* General reset for body and html */
+body, html {
+    margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    height: 100vh;
-    box-sizing: border-box;
+    height: 100%;
     background-color: #000; 
     color: #fff; 
-} */
+    box-sizing: border-box;
+}
 
+/* Padding for the header section */
 .IamYash {
     padding-top: 15vh;
 }
 
+/* Header section styling */
 .unique-dashboard-header {
     background-color: rgb(80, 78, 78);
     padding: 10px;
     text-align: center;
     width: 100%;
-    box-sizing: border-box;
     margin-bottom: 3%;
 }
 
@@ -26,15 +28,18 @@
     color: white;
 }
 
+/* Input container centered */
 .unique-input-container {
     display: flex;
     justify-content: center;
     margin: 10px 0;
 }
 
+/* Style for the input boxes */
 .unique-input-box {
     width: 45%;
-    height: 26px;
+    height: 35px; /* Increased height for better usability */
+    padding: 5px; /* Added padding for better input text visibility */
     margin-right: 10px;
     margin-bottom: 20px;
     margin-top: 5px;
@@ -45,29 +50,39 @@
     box-sizing: border-box;
 }
 
+/* Remove margin for the last input box */
 .unique-input-container .unique-input-box:last-child {
     margin-right: 0;
 }
 
+/* Dashboard layout with grid */
 .unique-dashboard-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3-column layout */
     gap: 20px;
     padding: 0 10%;
     box-sizing: border-box;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 120px); /* Full height minus header height */
 }
-
+.co2{
+    f
+}
+/* Individual dashboard boxes */
 .unique-box {
     background-color: rgb(80, 78, 78);
     display: flex;
     flex-direction: column;
-    width: 300px;
+    align-items: center; /* Center content */
+    justify-content: space-between; /* Space between elements */
+    width: 100%; /* Responsive width */
     height: 300px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    padding: 10px; /* Added padding */
+    box-sizing: border-box;
 }
 
+/* Specific border colors for different boxes */
 .unique-box1 {
     border: 2px solid yellow;
 }
@@ -92,25 +107,30 @@
     border: 2px solid blue;
 }
 
+/* Headers inside the boxes */
 .unique-h1, .unique-h2, .unique-h3, .unique-h4, .unique-h5, .unique-h6 {
     background-color: white;
     width: 82%;
     color: #000;
-    margin-top: 4%;
-    margin-left: 9%;
-    display: inline;
-    margin-bottom: 6%;
+    margin: 20px 0; /* Improved margin for spacing */
+    text-align: center; /* Center text */
 }
 
+/* Font style for the headers */
 .unique-h1 h1, .unique-h2 h1, .unique-h3 h1, .unique-h4 h1, .unique-h5 h1, .unique-h6 h1 {
     font-size: 1.2rem;
-    font-weight: 90;
+    font-weight: bold;
 }
 
+/* Flexbox container for buttons */
 .unique-bo, .unique-bo2, .unique-bo3, .unique-bo4, .unique-bo6 {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
+/* Button styles */
 .unique-b1, .unique-b2, .unique-b3, .unique-b4, .unique-b6 {
     display: flex;
     justify-content: center;
@@ -119,39 +139,41 @@
     font-size: 1.2rem;
     font-weight: 500;
     cursor: pointer;
+    border-radius: 5px; /* Add rounded corners */
+    color: white;
 }
 
+/* Button-specific styles */
 .unique-b1 {
     background-color: darkgoldenrod;
-    width: 100px;
-    margin-left: 15%;
-    margin-top: 15%;
+    width: 120px;
 }
 
 .unique-b2 {
     background-color: violet;
     width: 120px;
-    margin-left: 15%;
-    margin-top: 9%;
 }
 
 .unique-b3, .unique-b4, .unique-b6 {
     background-color: gray;
     width: 120px;
-    margin-left: 9%;
 }
 
+/* Slogan and text styling */
 .unique-s1, .unique-s2 {
     font-size: 2rem;
     font-style: oblique;
     font-weight: 900;
-    margin-left: 20%;
+    text-align: center;
+    margin-top: 10px;
 }
 
+/* Image containers */
 .unique-img, .unique-img-graph {
     background-size: cover;
     background-repeat: no-repeat;
-    margin-left: 20%;
+    width: 30%;
+    margin: 0 auto; /* Center images */
 }
 
 .unique-img img, .unique-img-graph img {

@@ -66,7 +66,7 @@ const Dashboard = () => {
           <p>Your monthly <br />carbon emission is</p>
           <div className="unique-bo">
             <div className="unique-b1"><h>xyz tons</h></div>
-            <span>CO<sub>2</sub></span>
+            <span className='co2'>CO<sub>2</sub></span>
           </div>
         </div>
         <div className="unique-box unique-box2">
@@ -91,7 +91,7 @@ const Dashboard = () => {
           <span>Buy and Sell Carbon Credits<br />Easily in the Marketplace</span>
           <div className="unique-bo4">
             <button className="unique-b4" onClick={goToMarketplace}><h>Go to Marketplace</h></button>
-            <div className="unique-img"><img src={`${process.env.PUBLIC_URL}/marketplace.png`} alt="marketplace" /></div>
+            <div className="unique-img"><img src={`${process.env.PUBLIC_URL}/cc.png`} alt="marketplace" /></div>
           </div>
         </div>
         <div className="unique-box unique-box5">
