@@ -100,7 +100,7 @@ const Dashboard = () => {
           <p>Your monthly <br />carbon emission is</p>
           <div className="unique-bo">
             <div className="unique-b1"><h>{totalCarbonEmission} tons</h></div>
-            <span>CO<sub>2</sub></span>
+            <span className='co2'>CO<sub>2</sub></span>
           </div>
         </div>
         <div className="unique-box unique-box2">

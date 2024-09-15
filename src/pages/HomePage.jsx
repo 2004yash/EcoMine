@@ -18,7 +18,7 @@ const HomePage = () => {
       <Menu />
       <Chatbot />
       <SignUpPage /> 
-      <News />
+      {/* <News /> */}
       <Footer />
       {/* <Button /> */}
       {/* <Hero3/> */}
