@@ -21,6 +21,18 @@ import { auth, db } from "./firebase";
 import { getAuth } from "firebase/auth";
 import { doc, setDoc,collection,getDocs  } from "firebase/firestore";
 
+var offsets = [
+  "afforestation",
+  "methaneCapture",
+  "renewableEnergy",
+  "soilCarbon",
+  "carbonCredits",
+  "enhancedWeathering",
+  "biochar",
+  "renewableDiesel",
+  "wetlandsPeatlands",
+]
+
 export function CarbonEmissionFromFuel(fuelType, fuelConsumed) {
   switch (fuelType) {
     case "anthracite":
@@ -48,6 +60,78 @@ export function CarbonEmissionFromFuel(fuelType, fuelConsumed) {
     default:
       return 0;
   }
+}
+export function getUnit(offset) {
+  switch (offset) {
+    case "afforestation":
+      // Return the unit for afforestation
+      return "hectares";
+
+    case "methaneCapture":
+      // Return the unit for methane capture
+      return "cubic meters";
+
+    case "renewableEnergy":
+      // Return the unit for renewable energy
+      return "MWh";
+
+    case "soilCarbon":
+      // Return the unit for soil carbon sequestration
+      return "hectares";
+
+    case "carbonCredits":
+      // Return the unit for carbon credits
+      return "credits";
+
+    case "enhancedWeathering":
+      // Return the unit for enhanced weathering
+      return "tons of rock";
+
+    case "biochar":
+      // Return the unit for biochar
+      return "tons of biochar";
+
+    case "renewableDiesel":
+      // Return the unit for renewable diesel
+      return "gallons";
+
+    case "wetlandsPeatlands":
+      // Return the unit for wetlands and peatlands restoration
+      return "hectares";
+
+    default:
+      // Return a default value if the offset is not recognized
+      return "unknown unit";
+  }
+}
+
+export function distributeValue(value, n) {
+  if (n <= 0) {
+      throw new Error('Number of parts must be greater than 0');
+  }
+  if (n === 1) {
+      return [value];
+  }
+
+  // Generate n-1 random split points
+  const splits = Array.from({ length: n - 1 }, () => Math.random()).sort((a, b) => a - b);
+
+  // Calculate the differences between split points
+  const parts = splits.map((split, index) => (split - (splits[index - 1] || 0)) * value);
+  
+  // Add the final part
+  parts.push((1 - splits[splits.length - 1]) * value);
+
+  return parts;
+}
+
+export function giveRecommendation(carbonEmission) {
+const parts = distributeValue(carbonEmission, 9);
+return offsets.map((offset, index) => {
+  const part = parts[index];
+  const factor = getCarbonMultiplier(offset);
+  return `Reduce carbon footprint by doing ${(part.toFixed(2) / factor.toFixed(2)).toFixed(2)} ${getUnit(offset)} of ${offset}.`;
+});
 }
 export function CarbonEmissionFromElectricity(units) {
   return (units * 1.0035).toFixed(2);
@@ -160,21 +244,23 @@ export function totalCarbonEmission() {
   ].map(
     (key) => (Number(localStorage.getItem(key)) || 0) * getCarbonMultiplier(key)
   );
-
-  // Subtract all offsets from the total emission
-  totalEmission -= offsets.reduce((acc, val) => acc + val, 0);
   const equipmentListJSON = localStorage.getItem("equipmentList");
 
   // Check if the equipmentList exists and parse it
   const equipmentList = equipmentListJSON ? JSON.parse(equipmentListJSON) : [];
-
-  // Iterate over the equipmentList array
-  equipmentList.forEach((equipment) => {
+   // Iterate over the equipmentList array
+   equipmentList.forEach((equipment) => {
     var emissionString = equipment.emissions;
     if (emissionString[0] == ".") emissionString = "0" + emissionString;
     var value = parseFloat(emissionString);
     totalEmission += value;
   });
+  totalEmission/=1000;
+  // Subtract all offsets from the total emission
+  totalEmission -= offsets.reduce((acc, val) => acc + val, 0);
+ 
+
+ 
   totalEmission = totalEmission.toFixed(5);
   // Optional: return or log the final total emission
   console.log("Total Carbon Emission:", totalEmission);
