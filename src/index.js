@@ -14,10 +14,7 @@ root.render(
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/carbonform/*" element={<CarbonForm />} />
-<<<<<<< HEAD
-=======
         <Route path="/dashboard" element={<Dashboard />} /> {/* Add the Dashboard route */}
->>>>>>> 1240625d7edcd4777d02bd221a657da7788e23d2
         {/* Add more routes as needed */}
       </Routes>
     </Router>
