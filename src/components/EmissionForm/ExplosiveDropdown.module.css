@@ -5,20 +5,38 @@ form {
     color: #ffffff;
 }
 
-label {
+.expolabel {
     display: block;
     margin-bottom: 5px;
+    margin-left: 16%;
 }
 
-.selectInput {
-    width: 116%;
+/* select, input {
+    width: 77%;
     height: 45%;
     padding: 4px;
     margin-bottom: 15px;
     border-radius: 5px;
     border: none;
+} */
+/* .expo select{
+    width: 77%;
+    height: 45%;
+    padding: 4px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;  
+} */
+.expodrop{
+    width: 60%;
+    height: 55%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none; 
+    margin-top: 3.5%;
+    margin-left: 16%;
 }
-
 /* button {
     padding: 10px 20px;
     background-color: #28a745;
@@ -31,3 +49,6 @@ label {
 /* button:hover {
     background-color: #218838;
 } */
+.expodrop{
+    padding: 2%;
+}

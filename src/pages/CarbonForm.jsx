@@ -2,9 +2,11 @@ import Navbar from "../components/navbar/navbar";
 import "./CarbonForm.css";
 import Excavation from "../components/EmissionForm/Excavation";
 import Transportation from "../components/EmissionForm/Transportation";
-import EquipmentOption from "../components/EmissionForm/Equipment";
+// import EquipmentOption from "../components/EmissionForm/Equipment";
 import Offset from "../components/EmissionForm//Offset";
 import { Route, Routes,Navigate } from "react-router-dom";
+import SingleEquipment from "../components/EmissionForm/SingleEquipment";
+import Equipment from "../components/EmissionForm/Equipment";
 
 // import EquipmentOption from "../components/EmissionForm/Equipment";
 
@@ -20,7 +22,7 @@ function CarbonForm() {
           <Route path="/" element={<Navigate to="excavation" />} />
             <Route path="/excavation" element={<Excavation />} />
             <Route path="transportation" element={<Transportation />} />
-            <Route path="equipment" element={<EquipmentOption />} />
+            <Route path="equipment" element={<Equipment/>} />
             <Route path="offset" element={<Offset/>} />
           </Routes>
         </div>

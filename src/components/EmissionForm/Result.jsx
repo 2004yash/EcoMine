@@ -1,8 +1,14 @@
+import React, { useEffect, useState } from "react";
 import { RiCheckDoubleFill } from "react-icons/ri";
 import { MdOutlineVerified } from "react-icons/md";
+import { useLocation } from 'react-router-dom';  // Keep this from your branch
+import Footer from "../footer/footer";  // Keep this from main branch
 import "./Result.css";
 
 function Result() {
+  const location = useLocation();
+  const { result } = location.state || {}; // Access the result from state
+
   return (
     <>
       <div className="resultt">
@@ -10,18 +16,47 @@ function Result() {
           <div className="left">
             <div className="textt">
               <h1>Congratulations!</h1>
-              <p> You have completed all the calculator sections.</p>
+              <p>You have completed all the calculator sections.</p>
             </div>
             <div className="totall">
               <h1>Your current total</h1>
-              <p>"XYZ"</p>
+              <p>{result ? result : "Not available"}</p> {/* Display the result */}
             </div>
 
             <div>
               <button type="button" className="view-graph-btn">View Graph</button>
             </div>
           </div>
-          <div className="right">
+<div className="Recomendation">
+          {/* Display the Recommendations */}
+          <div className="recommendations">
+            {/* <h2>Recommendations to Reduce Your Carbon Footprint:</h2> */}
+            <h2>
+                <MdOutlineVerified
+                  style={{
+                    color: "white",
+                    alignItems: "center",
+                    fontSize: "80%",
+                  }}
+                />
+               Recommendations to Reduce Your Carbon Footprint:
+              </h2>
+
+            <ul>
+              {recommendations.length > 0 ? (
+                recommendations.map((rec, index) => (
+                  <li key={index}>{rec}</li>
+                ))
+              ) : (
+                <p>No recommendations available.</p>
+              )}
+            </ul>
+          </div>
+        </div>
+      </div>
+      </div>
+
+     <div className="Premium">
             <div className="headcontainerr">
               <h1>
                 <MdOutlineVerified
@@ -111,14 +146,9 @@ function Result() {
                 </ul>
                 <button type="button" className="buybtnn">Buy Now</button>
               </div>
-              
             </div>
-            
-
-          </div>
-        </div>
-      </div>
-   
+          </div> 
+      <Footer />  {/* Include the Footer component */}
     </>
   );
 }

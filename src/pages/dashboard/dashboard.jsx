@@ -3,16 +3,31 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase'; // Import your Firebase configuration
 import './dashboard.css';
+import { getSummedValues,fetchAndSumCarbonEmissionHistory } from '../../CarbonCalculator';
+import { useNavigate, useLocation } from 'react-router-dom'; // Import useNavigate and useLocation
+// import dashboard from './dashboard.module.css';
 
 const Dashboard = () => {
   const [uniqueCompanyName, setUniqueCompanyName] = useState('');
   const [uniqueEmail, setUniqueEmail] = useState('');
+  const [totalCarbonEmission, setTotalCarbonEmission] = useState(0);
+  const [totalMoneySaved, setTotalMoneySaved] = useState(0);
+  const [totalCarbonCreditsEarned, setTotalCarbonCreditsEarned] = useState(0);
+
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  const [uid, setUid] = useState('');
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  const fallbackUid = location.state?.uid; // Get UID passed from login
 
   useEffect(() => {
     const auth = getAuth();
-    const fetchUniqueData = async (uid) => {
+
+    const fetchUniqueData = async (userUid) => {
       try {
-        const docRef = doc(db, 'users', uid);
+        const docRef = doc(db, 'users', userUid);
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
@@ -28,16 +43,50 @@ const Dashboard = () => {
     };
 
     onAuthStateChanged(auth, (user) => {
-      if (user) {
-        fetchUniqueData(user.uid);
+      const currentUid = user ? user.uid : fallbackUid;
+      if (currentUid) {
+        setUid(currentUid);
+        fetchUniqueData(currentUid);
       } else {
         console.log('No user is logged in');
       }
     });
-  }, []);
+    const fetchData = async () => {
+      try {
+        // Fetch values using the provided function
+        const { totalCarbonEmission, totalMoneySaved, totalCarbonCreditsEarned } =
+        await fetchAndSumCarbonEmissionHistory();
+        console.log("Carbon Emission:", totalCarbonEmission);
+  console.log("Money Saved:", totalMoneySaved);
+  console.log("Carbon Credits Earned:", totalCarbonCreditsEarned);
+        // Check if result is valid before destructuring
+        if (totalCarbonCreditsEarned!=null && totalCarbonEmission!=null && totalMoneySaved!=null) {
+          // Set the fetched values into state variables
+          setTotalCarbonEmission(totalCarbonEmission || 0);
+          setTotalMoneySaved(totalMoneySaved || 0);
+          setTotalCarbonCreditsEarned(totalCarbonCreditsEarned || 0);
+        } else {
+          throw new Error("Data fetch returned undefined");
+        }
+  
+        setLoading(false);
+      } catch (error) {
+        console.error("Failed to fetch data:", error);
+        setError("Failed to fetch data");
+        setLoading(false);
+      }
+    };
+  
+    fetchData();
+  }, [fallbackUid]);
+
+  // Navigate to Marketplace and pass user info
+  const goToMarketplace = () => {
+    navigate('/marketplace', { state: { uid, companyName: uniqueCompanyName, email: uniqueEmail } });
+  };
 
   return (
-    <div>
+    <div className='IamYash'>
       <header className="unique-dashboard-header">
         <h1>Carbon Footprint Dashboard</h1>
       </header>
@@ -50,15 +99,15 @@ const Dashboard = () => {
           <div className="unique-h1"><h1>Monthly Carbon Emission</h1></div>
           <p>Your monthly <br />carbon emission is</p>
           <div className="unique-bo">
-            <div className="unique-b1"><h>xyz tons</h></div>
-            <span>CO<sub>2</sub></span>
+            <div className="unique-b1"><h>{totalCarbonEmission} tons</h></div>
+            <span className='co2'>CO<sub>2</sub></span>
           </div>
         </div>
         <div className="unique-box unique-box2">
           <div className="unique-h2"><h1>Money Saved</h1></div>
           <p>Cost Savings Resulting <br />from Reduced Carbon <br />Emissions</p>
           <div className="unique-bo2">
-            <div className="unique-b2"><h>xyz</h></div>
+            <div className="unique-b2"><h>{totalMoneySaved}</h></div>
             <span className="unique-s1">$</span>
             <span className="unique-s2">$</span>
           </div>
@@ -72,10 +121,10 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="unique-box unique-box4">
-          <div className="unique-h4"><h1>Carbon Credits</h1></div>
-          <span>Guidance and <br />Support from <br />Leading<br /> Mentors</span>
+          <div className="unique-h4"><h1>Marketplace</h1></div>
+          <span>Buy and Sell Carbon Credits<br />Easily in the Marketplace</span>
           <div className="unique-bo4">
-            <div className="unique-b4"><h>Click here</h></div>
+            <div className="unique-b4"><h>{totalCarbonCreditsEarned}</h></div>
             <div className="unique-img"><img src={`${process.env.PUBLIC_URL}/cc.png`} alt="cc" /></div>
           </div>
         </div>
@@ -87,7 +136,7 @@ const Dashboard = () => {
         </div>
         <div className="unique-box unique-box6">
           <div className="unique-h6"><h1>Mentor Connect</h1></div>
-          <span>Guidance and <br />Support from <br />Leading <br />Mentors</span>
+          <span>Guidance and <br />Support from <br />Leading Mentors</span>
           <div className="unique-bo6">
             <div className="unique-b6"><h>Connect</h></div>
             <div className="unique-img"><img src={`${process.env.PUBLIC_URL}/connect.jpg`} alt="connect" /></div>

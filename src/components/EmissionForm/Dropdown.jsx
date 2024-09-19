@@ -1,11 +1,16 @@
 import React from 'react';
-import './Dropdown.module.css';
+import styles from './Dropdown.module.css'; // Import CSS module
 
 const Dropdown = ({ value, onChange }) => {
     return (
         <div>
-            <label htmlFor="fuelType">Fuel Type*</label>
-            <select id="fuelType" value={value} onChange={onChange}>
+            <label htmlFor="fuelType" className={styles.label}>Fuel Type*</label>
+            <select
+                id="fuelType"
+                className={styles.selectInput}  // Apply the CSS module class
+                value={value}
+                onChange={onChange}
+            >
                 <option value="" disabled>Select Fuel Type</option>
                 <option value="anthracite">Anthracite</option>
                 <option value="bituminous">Bituminous</option>
@@ -17,8 +22,6 @@ const Dropdown = ({ value, onChange }) => {
                 <option value="Pet Coke">Pet Coke</option>
                 <option value="Rice Husk">Rice Husk</option>
                 <option value="Wood">Wood</option>
-
-                {/* Add more options as needed */}
             </select>
         </div>
     );

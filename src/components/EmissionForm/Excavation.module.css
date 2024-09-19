@@ -34,7 +34,7 @@
     margin-top: 2vw;
 }
 
-.footer{
+.footerr{
     margin-top: 5%;
     width: 100%;
     height: 20%;
@@ -45,12 +45,13 @@
 .btn5{
     position: relative;
     background-color:green;
+   color:white;
    
-    /* padding: 1%; */
-    /* width: 15%; */
+    padding: 1%;
+    width: 15%;
     border-radius: 7px;
-    /* left: 49vw; */
-    /* top: 2.5vw; */
+    left: 49vw;
+    top: 1vw;
     
 }
 .btn{
@@ -65,4 +66,8 @@
     padding: 1%;
     width: 15%;
     
+}
+.overr12{
+    height: 80%;
+    border: 2px solid red;
 }
