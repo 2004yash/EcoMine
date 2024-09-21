@@ -1,73 +1,95 @@
-.box{
+/* Universal box styling */
+.box {
     height: 100%;
     width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
 }
-.headingF{
+
+/* Heading styles */
+.headingF, .headingE {
     font-weight: bold;
     margin: 2vw;
+    font-size: 1.2rem;
+    color: #333; /* Darker text for better visibility */
 }
-.inputF{
+
+/* Flex container for input fields */
+.inputF, .inputE {
     width: 100%;
-    height: 40%;
-    /* background-color: blue; */
+    height: auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between; /* Spread items evenly */
+    align-items: center; /* Align vertically */
+    gap: 2rem; /* Uniform gap between elements */
+    margin-top: 1.5vw;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.inputF {
     position: relative;
     bottom: 2px;
+}
 
-}
-.headingE{
-    margin: 2vw;
-    font-weight: bold;
-}
-.inputE{
-    width: 100%;
-    height: 40%;
-    /* background-color: blue; */
-    display: flex;
-    /* justify-content: space-around; */
-    margin-left: 4.2vw;
-    gap: 5vw;
-    margin-top: 2.4vw;
-}
-.electri{
+/* Specific adjustment for the second input container */
+.inputE {
+    margin-left: 2vw;
     margin-top: 2vw;
 }
 
-.footerr{
+/* Additional spacing for electric input section */
+.electri {
+    margin-top: 2vw;
+}
+
+/* Footer styling */
+.footerr {
     margin-top: 5%;
     width: 100%;
     height: 20%;
-   
-   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Lighter footer background for contrast */
+    padding: 1rem;
+}
 
-}
-.btn5{
+/* Button styles */
+.btn, .btn5 {
     position: relative;
-    background-color:green;
-   color:white;
-   
-    padding: 1%;
-    width: 15%;
+    background-color: green;
+    color: white;
+    padding: 1rem 2rem;
     border-radius: 7px;
-    left: 49vw;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover, .btn5:hover {
+    background-color: darkgreen; /* Darker shade on hover */
+}
+
+/* Button 5 specific adjustments */
+.btn5 {
+    left: 50%;
+    transform: translateX(-50%); /* Center the button horizontally */
     top: 1vw;
-    
 }
-.btn{
-    position: relative;
-    background-color:green;
-    /* scale: 1.2;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    border-radius: 7px; */
-    left: -7.9vw;
+
+/* Additional button positioning */
+.btn {
+    left: -8vw;
     top: 2.5vw;
-    padding: 1%;
-    width: 15%;
-    
 }
-.overr12{
+
+/* Override section with red border */
+.overr12 {
     height: 80%;
     border: 2px solid red;
+    padding: 1rem;
+    box-sizing: border-box;
+    border-radius: 10px; /* Optional rounded corners */
 }
