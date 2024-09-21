@@ -16,7 +16,7 @@ function Navbar() {
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/carbonform" className="nav-link">Carbon Form</Link>
           <Link to="/carbon" className="nav-link">Marketplace</Link>
-          <Link to="/result" className="nav-link">Result</Link>
+          {/* <Link to="/result" className="nav-link">Result</Link> */}
           <Link to="/dashboard" className="nav-link">Profile</Link> {/* Profile now links to Dashboard */}
         </div>
       </div>

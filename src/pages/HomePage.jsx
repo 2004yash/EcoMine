@@ -8,17 +8,21 @@ import Chatbot from '../components/Chatbot/ChatbotComponent'
 import SignUpPage from '../components/sign/sign'; // Updated import
 import Menu from '../components/menu/menu'
 import Footer from '../components/footer/footer';
-
-
+// import ExpenseChart from '../components/Graph/ExpenseChart';
+import WhyChooseUs from '../components/whychooseus/whychooseus';
 const HomePage = () => {
   return (
     <div>
-      <Navbar /> Render the Navbar component with JSX
+      <Navbar />  
       <Hero /> {/* Render the Hero component with JSX */}
       <Menu />
+      {/* <WhyChooseUs /> */}
       <Chatbot />
+      {/* <App /> */}
       <SignUpPage /> 
-      <News />
+      {/* <ExpenseChart /> */}
+      {/* <News /> */}
+      <Footer />
       {/* <Button /> */}
       {/* <Hero3/> */}
       {/* Render the SignUpPage component with JSX */}

@@ -7,22 +7,36 @@ const { theme, style } = buildTheme({
   themeColor: "#634433",
 });
 
-
 const clientId = "7ec8a49a-bbc0-4d9e-b215-36810c72fbc0";
 
 const ChatbotComponent = () => {
   const client = getClient({ clientId });
   const [isWebchatOpen, setIsWebchatOpen] = useState(false);
-
   const [chatKey, setChatKey] = useState(Date.now());
+  const [showFab, setShowFab] = useState(false); // State to track button visibility
 
   const toggleWebchat = () => {
     setIsWebchatOpen((prevState) => !prevState);
   };
 
-
   useEffect(() => {
-    setChatKey(Date.now()); 
+    setChatKey(Date.now());
+
+    const handleScroll = () => {
+      // Show the button when the user scrolls down 100px
+      if (window.scrollY > 100) {
+        setShowFab(true);
+      } else {
+        setShowFab(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
@@ -34,8 +48,9 @@ const ChatbotComponent = () => {
           style={{
             position: "fixed",
             bottom: "20px",
-            right: "20px",
+            right: showFab ? "20px" : "-100px", // Move the button off-screen if `showFab` is false
             zIndex: 1000,
+            transition: "right 0.5s ease", // Smooth transition effect
           }}
         />
         <div
