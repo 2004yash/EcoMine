@@ -39,7 +39,8 @@ background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
-  scale: 0.8;
+  scale: 0.96;
+  margin-top: 1.5%;
   /* overflow-y: auto; */
   
 }
