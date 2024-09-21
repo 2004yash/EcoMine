@@ -74,7 +74,13 @@
    display: flex;
     /* background-color: brown; */
 }
-.right{
+.Premium{
+  width: 50%;
+  height: 100%;
+  /* background-color: rgb(167, 119, 55); */
+  scale: 0.9;
+}
+.Recomendation{
   width: 50%;
   height: 100%;
   /* background-color: rgb(167, 119, 55); */

@@ -1,63 +1,67 @@
 /* Hero Section Styles */
 .hero-section {
-    display: flex;
-    align-items: flex-start; /* Aligns content to the top of the section */
-    height: 89vh !important;
-    margin-top: 35px;
-    width: 100%;
+  display: flex;
+  align-items: flex-start;
+  height: 89vh !important;
+  margin-top: 68px;
+  width: 100%;
+  background-position: center;
+  padding-left: 5%;
+  color: white;
+  background-color: black !important;
+  background-image: url("../../../public/backg.jpg");
+  position: relative; /* Required for positioning the signup button */
+}
 
-    background-position: center; /* Center the image */
-    padding-left: 5%; /* Left margin for the whole content */
-    color: white;
-    background-color: black !important;
-    background-image: url("../../../public/backg.jpg");
-  }
-  
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-top: 10%;
-  }
-  
-  /* Large Text (p1) with two lines */
-  .p5 {
-    font-size: 3.6rem !important; /* Font size for both lines */
-    margin: 0;
-    line-height: 1.2; /* Adjust line height as needed */
-    color: white;
-  }
-  
-  /* Smaller Text (p2) */
-  .p6 {
-    font-size: 1.4rem;
-    margin-left: 1% !important;
-    margin-top: 10px; /* Adjust spacing between p1 and p2 */
-    color: white;
-    margin-top: 3%;
-  }
-  
-  /* Button styling */
-  .button {
-    padding: 10px 30px; /* Adjusts the button's size (height and width) */
-    background-color:green; /* Button background color */
-    color: white; /* Button text color */
-    border: 2px solid white;
-    border-radius: 30px; /* Makes the button cylindrical */
-    font-size: 1rem;
-    font-family: 'Electrolize', sans-serif;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Greyish shadow */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
-    text-align: center;
-    display: inline-block; /* Keeps the button inline */
-    margin-top: 50px; /* Adds margin above the button to separate it from .p6 */
-    align-self: flex-start; /* Aligns the button to the start of the container (same as p6) */
-    margin-left: 1%; /* Aligns the button with the starting point of .p6 */
-  }
-  
-  .button:hover {
-    background-color: grey; /* Slightly darker green on hover */
-    transform: scale(1.03); /* Slightly enlarges the button on hover */
-  }
-  
+/* Hero content alignment */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 10%;
+}
+
+/* Large Text (p1) */
+.p5 {
+  font-size: 3.6rem !important;
+  margin: 0;
+  line-height: 1.2;
+  color: white;
+}
+
+/* Smaller Text (p2) */
+.p6 {
+  font-size: 1.4rem;
+  margin-left: 1% !important;
+  margin-top: 10px;
+  color: white;
+  margin-top: 3%;
+}
+
+/* Button on bottom-right corner with z-axis */
+.signup-button {
+  position: absolute; /* Allows positioning anywhere inside the hero section */
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right */
+  padding: 15px 40px;
+  background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
+  color: white;
+  margin-right: 35px !important;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-family: 'Electrolize', sans-serif;
+  cursor: pointer;
+  z-index: 10; /* Higher z-index to ensure it's above other elements */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  backdrop-filter: blur(4px); /* Adds a slight blur effect */
+}
+
+.signup-button:hover {
+  background-color: white; /* Solid background color on hover */
+  color: black;
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+

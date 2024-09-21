@@ -1,0 +1,102 @@
+/* WhyChooseUs.css */
+
+/* Basic container styling */
+.container {
+    padding: 50px 15px;
+  }
+  
+  h6.text-primary {
+    color: #007bff; /* Adjust primary color */
+  }
+  
+  h1.display-6 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  
+  p.mb-5 {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 2rem;
+  }
+  
+  /* Icon square (bg-primary) */
+  .btn-square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #007bff; /* Primary background */
+    border-radius: 5px;
+  }
+  
+  .btn-square i {
+    font-size: 1.2rem;
+  }
+  
+  /* Row and column styling */
+  .row.g-5 {
+    margin: 0;
+    row-gap: 30px; /* Custom spacing for the rows */
+  }
+  
+  .col-sm-6 {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  h5 {
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  /* Text styling */
+  span {
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  /* Animation effects (optional) */
+  .wow {
+    visibility: hidden;
+  }
+  
+  .fadeInUp {
+    animation-name: fadeInUp;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    visibility: visible;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      transform: translate3d(0, 40px, 0);
+      opacity: 0;
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+  
+  /* Add more animations as needed */
+  .fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    visibility: visible;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
