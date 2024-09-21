@@ -56,7 +56,7 @@ function Result() {
             <ul>
               {recommendations.length > 0 ? (
                 recommendations.map((rec, index) => (
-                  <li key={index}>{rec}</li>
+                  <li  key={index}>{rec}</li>
                 ))
               ) : (
                 <p>No recommendations available.</p>
