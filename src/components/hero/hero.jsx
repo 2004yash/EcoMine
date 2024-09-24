@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import './hero.css'; // Import the updated CSS
 
 function Hero3() {
@@ -17,8 +18,10 @@ function Hero3() {
         </p>
       </div>
 
-      {/* Sign Up button positioned over the hero section */}
-      <button className="signup-button">Sign Up</button>
+      {/* Sign Up button using Link to route to /signup */}
+      <Link to="/signup">
+        <button className="signup-button">Sign Up</button>
+      </Link>
     </section>
   );
 }
