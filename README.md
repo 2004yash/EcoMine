@@ -45,9 +45,14 @@ Follow these steps to run the project locally:
    ```
 
 3. Create a `.env.local` file and add the necessary Firebase and API configuration details. For example:  
-   ```plaintext
-   REACT_APP_FIREBASE_API_KEY=your_api_key
-   REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+   ```bash
+   REACT_APP_FIREBASE_API_KEY=xxx
+   REACT_APP_FIREBASE_AUTH_DOMAIN=xxx
+   REACT_APP_FIREBASE_PROJECT_ID=xxx
+   REACT_APP_FIREBASE_STORAGE_BUCKET=xxx
+   REACT_APP_FIREBASE_MESSAGING_SENDER_ID=xxx
+   REACT_APP_FIREBASE_APP_ID=xxx
+
    ```
 
 4. Run the project:  
