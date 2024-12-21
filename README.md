@@ -35,7 +35,7 @@ Follow these steps to run the project locally:
 
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/yourusername/ecomine.git
+   git clone https://github.com/2004yash/ecomine.git
    cd ecomine
    ```
 
